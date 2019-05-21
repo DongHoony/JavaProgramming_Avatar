@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="444.0" y="542.0">Avatar.Aang</node>
+    <node x="617.0" y="0.0">Avatar.SkillSet</node>
+    <node x="296.0" y="542.0">Avatar.Zuko</node>
+    <node x="476.0" y="465.0">Avatar.Air</node>
+    <node x="0.0" y="791.0">Avatar.GameBoard</node>
+    <node x="129.0" y="0.0">Avatar.Attackable</node>
+    <node x="148.0" y="542.0">Avatar.Katara</node>
+    <node x="27.0" y="465.0">Avatar.Earth</node>
+    <node x="129.0" y="99.0">Avatar.Player</node>
+    <node x="0.0" y="542.0">Avatar.Toff</node>
+    <node x="175.0" y="465.0">Avatar.Water</node>
+    <node x="327.0" y="465.0">Avatar.Fire</node>
+    <node x="310.0" y="791.0">Avatar.Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Avatar.Fire" target="Avatar.Player">
+      <point x="0.0" y="-13.5" />
+      <point x="360.0" y="440.0" />
+      <point x="325.25" y="440.0" />
+      <point x="39.25" y="158.0" />
+    </edge>
+    <edge source="Avatar.Water" target="Avatar.Player">
+      <point x="0.0" y="-13.5" />
+      <point x="212.0" y="440.0" />
+      <point x="246.75" y="440.0" />
+      <point x="-39.25" y="158.0" />
+    </edge>
+    <edge source="Avatar.Toff" target="Avatar.Earth">
+      <point x="0.0" y="-102.0" />
+      <point x="0.0" y="13.5" />
+    </edge>
+    <edge source="Avatar.Katara" target="Avatar.Water">
+      <point x="0.0" y="-102.0" />
+      <point x="0.0" y="13.5" />
+    </edge>
+    <edge source="Avatar.Zuko" target="Avatar.Fire">
+      <point x="0.0" y="-102.0" />
+      <point x="0.0" y="13.5" />
+    </edge>
+    <edge source="Avatar.Air" target="Avatar.Player">
+      <point x="0.0" y="-13.5" />
+      <point x="508.0" y="440.0" />
+      <point x="403.75" y="440.0" />
+      <point x="117.75" y="158.0" />
+    </edge>
+    <edge source="Avatar.Aang" target="Avatar.Air">
+      <point x="0.0" y="-102.0" />
+      <point x="0.0" y="13.5" />
+    </edge>
+    <edge source="Avatar.Earth" target="Avatar.Player">
+      <point x="0.0" y="-13.5" />
+      <point x="64.0" y="440.0" />
+      <point x="168.25" y="440.0" />
+      <point x="-117.75" y="158.0" />
+    </edge>
+    <edge source="Avatar.Player" target="Avatar.Attackable">
+      <point x="0.0" y="-158.0" />
+      <point x="0.0" y="24.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7221052631578948" x="172.13128993526954" y="407.66302908978264" />
+  <SelectedNodes>
+    <node>Avatar.Fire</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
