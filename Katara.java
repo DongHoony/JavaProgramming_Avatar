@@ -20,6 +20,7 @@ public class Katara extends Water{
         skills.setDamage(0, 0);
         skills.setRange(0, 4);
         skills.setSkillName(0, "Healing Wave");
+        skills.setHealAmount(0, 20);
         skills.setRequiredEnergy(0, 20);
     }
     public void skill2() {

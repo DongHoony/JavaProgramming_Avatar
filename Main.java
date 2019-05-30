@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException{
         Scanner sc = new Scanner(System.in);
         //CHARACTER SELECT : USE IF TO GET P1, P2 CHARACTERS
-        Player p1 = new Katara(true);
+        Player p1 = new Pakku(true);
         Player p2 = new Zuko(false);
 
         //ATTACH CHARACTERS TO GAME BOARD

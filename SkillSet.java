@@ -2,6 +2,7 @@ package Avatar;
 
 public class SkillSet {
 
+    int[] healAmount = {0, 0, 0, 0, 0};
     boolean[][] range = new boolean[5][9];
     int[] damage = new int[5], requiredEnergy = new int[5];
     String[] skillName = new String[5];
@@ -10,14 +11,14 @@ public class SkillSet {
         System.out.println("SKILLSET ENABLED");
     }
 
-
+    public void setHealAmount(int skillNum, int h){ this.healAmount[skillNum] = h; }
     public void setDamage(int skillNum, int d){
         this.damage[skillNum] = d;
     }
-
     public void setRequiredEnergy(int skillNum, int e){
         this.requiredEnergy[skillNum] = e;
     }
+
     public int getDamage(int skillNum){
         return this.damage[skillNum];
     }

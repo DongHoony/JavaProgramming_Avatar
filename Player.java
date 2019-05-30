@@ -23,6 +23,10 @@ public abstract class Player implements Attackable {
     }
 
     public void attack(Player p, Player target, SkillSet s, int skillNum, GameBoard g){
+        // Heal up
+        p.setHealth(p.getHealth() + p.skills.healAmount[skillNum]);
+        if (p.getHealth() > 100) p.setHealth(100);
+
         // ATTACK HAS TO BE PLAYED *AFTER* SKILL MODIFIED
         boolean isP1 = p.isP1;
         // USE REQUIRED ENERGY

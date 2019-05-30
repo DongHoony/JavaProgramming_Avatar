@@ -6,14 +6,18 @@ public class Pakku extends Water{
 		System.out.println("물의 부족, 남극의 수호자 파쿠!");
 	}
 
-	public void activeskills() {
+	public void activeSkills() {
 		this.skill1();
 		this.skill2();
 		this.skill3();
 		this.skill4();
 
 	}
-
+	public Pakku(boolean isP1){
+		this();
+		this.isP1 = isP1;
+		this.activeSkills();
+	}
 	public void skill1() {
 		skills.setDamage(0, 0);
 		skills.setRange(0, 4);
@@ -39,6 +43,8 @@ public class Pakku extends Water{
 		skills.setSkillName(3, "Shield of Ice");
 		skills.setRequiredEnergy(3, -20);
 	}
-
+	public void skill5(){
+		skills.skill5();
+	}
 
 }
