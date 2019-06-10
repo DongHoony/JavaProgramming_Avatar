@@ -1,5 +1,6 @@
 package Avatar;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
@@ -7,7 +8,7 @@ public class Main {
         g.showBoard();
         Thread.sleep(300);
     }
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         Scanner sc = new Scanner(System.in);
         GUI_Menu gui = new GUI_Menu();
 
@@ -20,11 +21,20 @@ public class Main {
 
         boolean turnP1 = false;
         while (true){
+
+
+
             //TURN BY TURN, CHANGES FIRST
             turnP1 = !turnP1;
             System.out.printf("\n!!!! TURN %s !!!!\n", (turnP1) ? "P1" : "P2");
             gui.logAppend(String.format("\n!!!! TURN %s !!!!\n", (turnP1) ? "P1" : "P2"));
             g.showBoard();
+
+            // IF READY, CONTINUE
+            while (true){
+                Thread.sleep(50);
+                if (gui.isP1Confirmed && gui.isP2Confirmed) break;
+            }
 
             // Shows range print
             for (int i = 0; i<5;i++){
@@ -45,10 +55,13 @@ public class Main {
 
             System.out.printf("P1 HP: %d, EN: %d\nP1 COMMAND : ",
                                           p1.getHealth(), p1.getEnergy());
-            char[] cmdP1 = sc.next().toCharArray();
+            //char[] cmdP1 = sc.next().toCharArray();
             System.out.printf("P2 HP: %d, EN: %d\nP2 COMMAND : ",
                                           p2.getHealth(), p2.getEnergy());
-            char[] cmdP2 = sc.next().toCharArray();
+            //char[] cmdP2 = sc.next().toCharArray();
+
+            char[] cmdP1 = gui.p1SkillMoves;
+            char[] cmdP2 = gui.p2SkillMoves;
 
             //MOVE AND ATTACK, NEED TO SIMPLIFY
             for(int i = 0; i < 3; i++){
@@ -125,6 +138,11 @@ public class Main {
             //Guard off when turn ends
             p1.skills.isGuardOn = false;
             p2.skills.isGuardOn = false;
+
+            gui.isP1Confirmed = false;
+            gui.isP2Confirmed = false;
+
+            gui.btnActive();
         }
     }
 }
