@@ -2,7 +2,9 @@ package Avatar;
 
 public class GameBoard {
     boolean[][][] gameboard;
+    Player p1, p2;
     public GameBoard(Player p1, Player p2){
+        this.p1 = p1; this.p2 = p2;
         gameboard = new boolean[3][4][2];
         //Default position
         gameboard[1][0][0] = true;

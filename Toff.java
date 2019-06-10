@@ -9,21 +9,20 @@ public class Toff extends Earth{
         this();
         this.isP1 = isP1;
         this.activeSkills();
+        this.name = "Toff";
     }
     public void activeSkills() {
         this.skill1();
         this.skill2();
         this.skill3();
         this.skill4();
-
+        this.skill5();
     }
-
     public void skill1() {
         skills.setDamage(0, 30);
         skills.setRange(0,0,1,2,6,7,8);
         skills.setSkillName(0, "EarthQuake");
         skills.setRequiredEnergy(0, 30);
-
     }
     public void skill2() {
         skills.setDamage(1, 25);
@@ -45,7 +44,9 @@ public class Toff extends Earth{
     }
 
     public void skill5(){
-        skills.skill5();
+        skills.setDamage(4, 0);
+        skills.setSkillName(4, "Guard");
+        skills.setRequiredEnergy(4, 15);
     }
 
 }

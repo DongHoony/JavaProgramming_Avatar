@@ -2,15 +2,16 @@ package Avatar;
 
 public class SkillSet {
 
+    int[] burnTick = {0, 0, 0, 0, 0};
     int[] healAmount = {0, 0, 0, 0, 0};
     boolean[][] range = new boolean[5][9];
     int[] damage = new int[5], requiredEnergy = new int[5];
     String[] skillName = new String[5];
-
+    boolean isGuardOn = false;
     public SkillSet(){
         System.out.println("SKILLSET ENABLED");
     }
-
+    public void setBurnTick(int skillNum, int b){ this.burnTick[skillNum] = b;}
     public void setHealAmount(int skillNum, int h){ this.healAmount[skillNum] = h; }
     public void setDamage(int skillNum, int d){
         this.damage[skillNum] = d;
@@ -37,7 +38,6 @@ public class SkillSet {
     public void guard(Player p, GameBoard g){
 
     }
-
     public void skill1(){}
     public void skill2(){}
     public void skill3(){}
@@ -47,7 +47,7 @@ public class SkillSet {
         this.setDamage(4, 0);
         this.setRequiredEnergy(4, -15);
         this.setRange(4, 4);
+        this.isGuardOn = true;
 
     }
-
 }

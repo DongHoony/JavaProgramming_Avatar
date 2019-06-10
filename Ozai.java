@@ -8,12 +8,14 @@ public class Ozai extends Fire {
         this();
         this.isP1 = isP1;
         this.activeSkills();
+        this.name = "Ozai";
     }
     public void activeSkills(){
         this.skill1();
         this.skill2();
         this.skill3();
         this.skill4();
+        this.skill5();
     }
     public void skill1(){
         skills.setDamage(0, 25);
@@ -40,7 +42,9 @@ public class Ozai extends Fire {
         skills.setSkillName(3,"Plasma spray");
     }
     public void skill5(){
-        skills.skill5();
+        skills.setDamage(4, 0);
+        skills.setSkillName(4, "Guard");
+        skills.setRequiredEnergy(4, 15);
     }
 }
 
