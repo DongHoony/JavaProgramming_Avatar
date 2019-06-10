@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Avatar.GUI_Menu">
+  <grid id="27dc6" binding="menuGui" layout-manager="GridLayoutManager" row-count="14" column-count="14" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="1640" height="781"/>
+    </constraints>
+    <properties>
+      <background color="-852018"/>
+      <maximumSize width="1500" height="700"/>
+      <minimumSize width="1500" height="700"/>
+      <preferredSize width="1500" height="700"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="c22d1" binding="btnsPanel" layout-manager="GridLayoutManager" row-count="5" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="11" column="1" row-span="2" col-span="12" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="200"/>
+            <maximum-size width="-1" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-852018"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <hspacer id="510fd">
+            <constraints>
+              <grid row="2" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <hspacer id="a69d7">
+            <constraints>
+              <grid row="4" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <hspacer id="631e0">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <grid id="52479" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="1" row-span="5" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-852018"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="8eec1" class="javax.swing.JButton" binding="p1m1">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="50" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value="U"/>
+                </properties>
+              </component>
+              <component id="64b61" class="javax.swing.JButton" binding="p1m2">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="D"/>
+                </properties>
+              </component>
+              <component id="39238" class="javax.swing.JButton" binding="p1m3">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="L"/>
+                </properties>
+              </component>
+              <component id="8d3b4" class="javax.swing.JButton" binding="p1m4">
+                <constraints>
+                  <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="R"/>
+                </properties>
+              </component>
+              <component id="86bb5" class="javax.swing.JButton" binding="p1s1">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S1"/>
+                </properties>
+              </component>
+              <component id="675ed" class="javax.swing.JButton" binding="p1s2">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S2"/>
+                </properties>
+              </component>
+              <component id="b698e" class="javax.swing.JButton" binding="p1s3">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S3"/>
+                </properties>
+              </component>
+              <component id="952d1" class="javax.swing.JButton" binding="p1s4">
+                <constraints>
+                  <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S4"/>
+                </properties>
+              </component>
+              <grid id="a945c" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="118b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="9ec22" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="c0904" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="63c99" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="b1aae" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="8f660" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="54146" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <component id="61d6a" class="javax.swing.JButton" binding="p1m5">
+                <constraints>
+                  <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="M5"/>
+                </properties>
+              </component>
+              <grid id="7ebb2" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="d6fb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <component id="c6e2c" class="javax.swing.JButton" binding="p1s5">
+                <constraints>
+                  <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S5"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="53432" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="6" row-span="5" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-852018"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="82b1" class="javax.swing.JButton" binding="p2m2">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="D"/>
+                </properties>
+              </component>
+              <component id="c17f9" class="javax.swing.JButton" binding="p2m3">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="L"/>
+                </properties>
+              </component>
+              <component id="d03ea" class="javax.swing.JButton" binding="p2m4">
+                <constraints>
+                  <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="R"/>
+                </properties>
+              </component>
+              <component id="2a54a" class="javax.swing.JButton" binding="p2s2">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S2"/>
+                </properties>
+              </component>
+              <component id="6b6db" class="javax.swing.JButton" binding="p2s3">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S3"/>
+                </properties>
+              </component>
+              <component id="3d60a" class="javax.swing.JButton" binding="p2s4">
+                <constraints>
+                  <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S4"/>
+                </properties>
+              </component>
+              <component id="f9afa" class="javax.swing.JButton" binding="p2m1">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="U"/>
+                </properties>
+              </component>
+              <component id="c3890" class="javax.swing.JButton" binding="p2s1">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S1"/>
+                </properties>
+              </component>
+              <grid id="3eefb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="e7a14" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="eb097" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="77806" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="6682c" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="dbb54" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="8ce01" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="f9cb1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <component id="e9e77" class="javax.swing.JButton" binding="p2m5">
+                <constraints>
+                  <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="M5"/>
+                </properties>
+              </component>
+              <grid id="c925e" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <grid id="26e2f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6379898"/>
+                </properties>
+                <border type="none" title=""/>
+                <children/>
+              </grid>
+              <component id="c499c" class="javax.swing.JButton" binding="p2s5">
+                <constraints>
+                  <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="S5"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="f3c49" class="javax.swing.JTextField" binding="guiLog">
+            <constraints>
+              <grid row="0" column="3" row-span="5" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="300" height="200"/>
+                <maximum-size width="420" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-1114146"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <hspacer id="a0626">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="20" height="-1"/>
+                <maximum-size width="20" height="-1"/>
+              </grid>
+            </constraints>
+          </hspacer>
+          <hspacer id="11f2c">
+            <constraints>
+              <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <hspacer id="baffe">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+        </children>
+      </grid>
+      <hspacer id="83e52">
+        <constraints>
+          <grid row="4" column="2" row-span="2" col-span="3" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <vspacer id="a4601">
+        <constraints>
+          <grid row="6" column="7" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="58b88">
+        <constraints>
+          <grid row="13" column="7" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="b1def" class="javax.swing.JButton" binding="changePanel">
+        <constraints>
+          <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="1f8fd" class="javax.swing.JProgressBar" binding="p1HealthBar">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-3467520"/>
+          <indeterminate value="false"/>
+          <value value="100"/>
+        </properties>
+      </component>
+      <component id="4dca9" class="javax.swing.JProgressBar" binding="p2Healthbar">
+        <constraints>
+          <grid row="1" column="9" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-3467520"/>
+          <value value="100"/>
+        </properties>
+      </component>
+      <vspacer id="2b172">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="5" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <hspacer id="e2c31">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="30" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <vspacer id="8826b">
+        <constraints>
+          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="dad12">
+        <constraints>
+          <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <grid id="27c58" layout-manager="GridLayoutManager" row-count="3" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="10" vgap="10">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="7" column="7" row-span="4" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="420" height="320"/>
+            <maximum-size width="420" height="320"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-852018"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="bfd46" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none" title=""/>
+            <children/>
+          </grid>
+          <grid id="e19de" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="cda97" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="c44b6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="4c4ef" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="e2bad" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="37d69" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="833c2" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="35d5b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="6a3a2" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="d8ad6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="2" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="5681b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="100" height="100"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+        </children>
+      </grid>
+      <vspacer id="d426">
+        <constraints>
+          <grid row="11" column="0" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="200"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <grid id="12a08" binding="p1SkillQueue" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="8" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-852018"/>
+          <foreground color="-1114146"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="6ce57" binding="p1SkillQ1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none" title=""/>
+            <children>
+              <component id="85d4b" class="javax.swing.JButton" binding="p1SkillQ1Btn">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Skill Slot"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="fdc31" binding="p1SkillQ3" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none" title=""/>
+            <children>
+              <component id="609e6" class="javax.swing.JButton" binding="p1SkillQ3Btn">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Skill Slot"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="ae48" binding="p1SkillQ2" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none" title=""/>
+            <children>
+              <component id="3372f" class="javax.swing.JButton" binding="p1SkillQ2Btn">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Skill Slot"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <vspacer id="4523d">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="5" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <grid id="a77ec" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="8" column="10" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-852018"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="c3b39" binding="p2SkillQ1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none" title=""/>
+            <children>
+              <component id="1a8ab" class="javax.swing.JButton" binding="p2SkillQ1Btn">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Skill Slot"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="531" binding="p2SkillQ3" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none" title=""/>
+            <children>
+              <component id="4fe17" class="javax.swing.JButton" binding="p2SkillQ3Btn">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Skill Slot"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="b57a3" binding="p2SkillQ2" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                <preferred-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6379898"/>
+            </properties>
+            <border type="none" title=""/>
+            <children>
+              <component id="4dd4e" class="javax.swing.JButton" binding="p2SkillQ2Btn">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Skill Slot"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <component id="76494" class="javax.swing.JButton" binding="p1ResetBtn">
+        <constraints>
+          <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Reset SkillSlots"/>
+        </properties>
+      </component>
+      <component id="a058e" class="javax.swing.JButton" binding="p2ResetBtn">
+        <constraints>
+          <grid row="9" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Reset SkillSlots"/>
+        </properties>
+      </component>
+      <vspacer id="748b5">
+        <constraints>
+          <grid row="10" column="3" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="a677e" class="javax.swing.JButton" binding="p1ConfirmBtn">
+        <constraints>
+          <grid row="9" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Confirm"/>
+        </properties>
+      </component>
+      <component id="17ef4" class="javax.swing.JButton" binding="p2ConfirmBtn">
+        <constraints>
+          <grid row="9" column="11" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Confirm"/>
+        </properties>
+      </component>
+      <hspacer id="479e5">
+        <constraints>
+          <grid row="8" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="79d">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="69b65" class="javax.swing.JProgressBar" binding="p1EnergyBar">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16764747"/>
+          <value value="100"/>
+          <verifyInputWhenFocusTarget value="true"/>
+        </properties>
+      </component>
+      <hspacer id="7dee4">
+        <constraints>
+          <grid row="8" column="9" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="3e9d1" class="javax.swing.JProgressBar" binding="p2EnergyBar">
+        <constraints>
+          <grid row="2" column="9" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <foreground color="-16764747"/>
+          <value value="100"/>
+        </properties>
+      </component>
+      <hspacer id="7dae">
+        <constraints>
+          <grid row="5" column="10" row-span="1" col-span="3" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="821d8">
+        <constraints>
+          <grid row="8" column="12" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="bbabd">
+        <constraints>
+          <grid row="2" column="13" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="30" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+    </children>
+  </grid>
+</form>
