@@ -19,9 +19,6 @@ public class Aang extends Air {
         this.skill5();
     }
 
-
-
-    
     public void skill1(){
     	/*skills.setDamage(0, 0);
         skills.setRequiredEnergy(0, -50);
@@ -32,7 +29,7 @@ public class Aang extends Air {
         skills.setRequiredEnergy(0, 30);
         skills.setRange(0, 1, 3, 4, 5, 7);
         skills.setSkillName(0, "Sylphid");       
-
+        skills.setAirMoveAfterSkill(0, 'R');
     }
     public void skill2(){
     	skills.setDamage(1, 30);

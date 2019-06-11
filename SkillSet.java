@@ -4,6 +4,7 @@ public class SkillSet {
 
     int[] burnTick = {0, 0, 0, 0, 0};
     int[] healAmount = {0, 0, 0, 0, 0};
+    char[] airMoveAfterSkill = new char[5];
     boolean[][] range = new boolean[5][9];
     int[] damage = new int[5], requiredEnergy = new int[5];
     String[] skillName = new String[5];
@@ -19,7 +20,7 @@ public class SkillSet {
     public void setRequiredEnergy(int skillNum, int e){
         this.requiredEnergy[skillNum] = e;
     }
-
+    public void setAirMoveAfterSkill(int skillNum, char moveToward){this.airMoveAfterSkill[skillNum] = moveToward;}
     public int getDamage(int skillNum){
         return this.damage[skillNum];
     }
