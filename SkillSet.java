@@ -2,6 +2,7 @@ package Avatar;
 
 public class SkillSet {
 
+    int[][] earthCCRange = {{-3, -3}, {-3, -3}, {-3, -3}, {-3, -3}, {-3, -3}};
     int[] burnTick = {0, 0, 0, 0, 0};
     int[] healAmount = {0, 0, 0, 0, 0};
     char[] airMoveAfterSkill = new char[5];
@@ -28,7 +29,10 @@ public class SkillSet {
         return this.requiredEnergy[skillNum];
     }
     public void setSkillName(int skillNum, String name){this.skillName[skillNum] = name;}
-
+    public void setEarthCCRange(int skillNum, int y, int x){
+        this.earthCCRange[skillNum][0] = y;
+        this.earthCCRange[skillNum][1] = x;
+    }
     public void setRange(int skillNum, int... i){
         range[skillNum] = new boolean[9];
         for(int k : i){
@@ -36,9 +40,6 @@ public class SkillSet {
         }
     }
 
-    public void guard(Player p, GameBoard g){
-
-    }
     public void skill1(){}
     public void skill2(){}
     public void skill3(){}

@@ -23,6 +23,7 @@ public class Earthian extends Earth{
         skills.setDamage(0, 30);
         skills.setRequiredEnergy(0, 30);
         skills.setRange(0, 2, 6, 8);
+        skills.setEarthCCRange(0, 1, 1);
         skills.setSkillName(0, "Diastrophism");
     }
     public void skill2() {

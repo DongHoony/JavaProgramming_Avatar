@@ -18,17 +18,19 @@ public class Main {
 
     public static void showSleep(GameBoard g) throws InterruptedException {
         g.showBoard();
-        Thread.sleep(300);
+        Thread.sleep(500);
     }
+    static Player p1, p2;
 
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         Scanner sc = new Scanner(System.in);
         GUI_Menu gui = new GUI_Menu();
 
         //CHARACTER SELECT : USE IF TO GET P1, P2 CHARACTERS
-        Player p1 = new Aang(true);
-        Player p2 = new Zuko(false);
-        gui.setCharacterImage(1, 7);
+        p1 = new Earthian(true);
+        p2 = new Zuko(false);
+        // Aang, Giaso, Toff, Bumi, Katara, Pakku, Zuko, Ozai
+        gui.setCharacterImage(4, 7);
 
         //ATTACH CHARACTERS TO GAME BOARD
         GameBoard g = new GameBoard(p1, p2);
@@ -36,7 +38,7 @@ public class Main {
         boolean turnP1 = false;
         while (true) {
 
-            gui.refreshGuiBoard(g);
+            gui.refreshGuiBoard();
 
 
             //TURN BY TURN, CHANGES FIRST
@@ -99,7 +101,7 @@ public class Main {
                         showSleep(g);
 
                     }
-                    gui.refreshGuiBoard(g);
+                    gui.refreshGuiBoard();
                     //P2 ATTACK
                     if (Character.toString(cmdP2[i]).matches("[1-5]+")) {
                         range = p2.getRangeByIntArray(p2, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g);
@@ -116,7 +118,7 @@ public class Main {
                         showSleep(g);
 
                     }
-                    gui.refreshGuiBoard(g);
+                    gui.refreshGuiBoard();
                 } else {
                     if (Character.toString(cmdP2[i]).matches("[1-5]+")) {
                         range = p2.getRangeByIntArray(p2, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g);
@@ -131,7 +133,7 @@ public class Main {
                         showSleep(g);
 
                     }
-                    gui.refreshGuiBoard(g);
+                    gui.refreshGuiBoard();
                     if (Character.toString(cmdP1[i]).matches("[1-5]+")) {
                         range = p1.getRangeByIntArray(p1, p1.skills, Integer.parseInt(Character.toString(cmdP1[i])) - 1, g);
                         gui.blinkBoard(convertIntegers(range), true);
@@ -144,7 +146,7 @@ public class Main {
                         p1.move(g, cmdP1[i]);
                         showSleep(g);
                     }
-                    gui.refreshGuiBoard(g);
+                    gui.refreshGuiBoard();
                 }
             }
             // gets burn damage when turn ends
@@ -171,9 +173,11 @@ public class Main {
             p1.skills.isGuardOn = false;
             p2.skills.isGuardOn = false;
 
+            g.earthBoardRefresh();
+
             gui.isP1Confirmed = false;
             gui.isP2Confirmed = false;
-            gui.refreshGuiBoard(g);
+            gui.refreshGuiBoard();
             gui.setBtnsActive();
         }
     }

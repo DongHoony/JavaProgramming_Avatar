@@ -93,7 +93,16 @@ public abstract class Player implements Attackable {
         if (p.skills.airMoveAfterSkill[skillNum] != 0) {
             p.move(g, p.skills.airMoveAfterSkill[skillNum]);
         }
-
+        //Earth cc
+        if (p.skills.earthCCRange[skillNum][0] != -3){
+            System.out.println("CC ACTIVE !");
+            int ty = playerPos[0] - p.skills.earthCCRange[skillNum][0];
+            int tx = playerPos[1] + p.skills.earthCCRange[skillNum][1];
+            if (ty < 3 && ty >= 0 && tx < 4 && tx >= 0){
+                g.gameboard[ty][tx][2] = true;
+                g.earthCCBoard[ty][tx] = 3;
+            }
+        }
     }
 
     public void deathCheck(Player p, Player target) {
@@ -125,44 +134,65 @@ public abstract class Player implements Attackable {
     public void move(GameBoard g, char moveToward){
         int[] pos = g.getPlayerPos(this.isP1);
         System.out.printf("Now pos is %d, %d\n", pos[0], pos[1]);
-        switch(moveToward){
-            case 'L':
-                if (pos[1] == 0){
-                    System.out.println("Cannot move more");
-                }
-                else{
-                    g.setPlayerPos(this,  this.isP1, pos[0], pos[1]-1);
-                    System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0], pos[1]-1);
-                }
-                break;
-            case 'R':
-                if (pos[1] == 3){
-                    System.out.println("Cannot move more");
-                }
-                else{
-                    g.setPlayerPos(this,  this.isP1, pos[0], pos[1]+1);
-                    System.out.printf("Moved P%d to %d, %d\n", isP1?1:2, pos[0], pos[1]+1);
-                }
-                break;
-            case 'U':
-                if (pos[0] == 0){
-                    System.out.println("Cannot move more");
-                }
-                else{
-                    g.setPlayerPos(this,  this.isP1, pos[0]-1, pos[1]);
-                    System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0]-1, pos[1]);
-                }
-                break;
-            case 'D':
-                if (pos[0] == 2){
-                    System.out.println("Cannot move more");
-                }
-                else{
-                    g.setPlayerPos(this,  this.isP1, pos[0]+1, pos[1]);
-                    System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0]+1, pos[1]);
-                }
-                break;
 
+        // U D L R:
+        int[] dy = {-1, 1, 0, 0};
+        int[] dx = {0, 0, -1, 1};
+        char[] index = {'U', 'D', 'L', 'R'};
+        int idx = -1;
+        for(int i = 0; i < 4; i++){
+            if (index[i] == moveToward) idx = i;
         }
+
+        int ty = pos[0] + dy[idx];
+        int tx = pos[1] + dx[idx];
+        if (ty >= 0 && ty < 3 && tx >= 0 && tx < 4 && !g.gameboard[ty][tx][2]){
+            g.setPlayerPos(this.isP1, ty, tx);
+            System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0], pos[1]-1);
+        }
+        else{
+            System.out.println("Cant move more.");
+        }
+
+
+//        switch(moveToward){
+//            case 'L':
+//                if (pos[1] == 0){
+//                    System.out.println("Cannot move more");
+//                }
+//                else{
+//                    g.setPlayerPos(this,  this.isP1, pos[0], pos[1]-1);
+//                    System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0], pos[1]-1);
+//                }
+//                break;
+//            case 'R':
+//                if (pos[1] == 3){
+//                    System.out.println("Cannot move more");
+//                }
+//                else{
+//                    g.setPlayerPos(this,  this.isP1, pos[0], pos[1]+1);
+//                    System.out.printf("Moved P%d to %d, %d\n", isP1?1:2, pos[0], pos[1]+1);
+//                }
+//                break;
+//            case 'U':
+//                if (pos[0] == 0){
+//                    System.out.println("Cannot move more");
+//                }
+//                else{
+//                    g.setPlayerPos(this,  this.isP1, pos[0]-1, pos[1]);
+//                    System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0]-1, pos[1]);
+//                }
+//                break;
+//            case 'D':
+//                if (pos[0] == 2){
+//                    System.out.println("Cannot move more");
+//                }
+//                else{
+//                    g.setPlayerPos(this,  this.isP1, pos[0]+1, pos[1]);
+//                    System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0]+1, pos[1]);
+//                }
+//                break;
+//
+//        }
     }
 }
