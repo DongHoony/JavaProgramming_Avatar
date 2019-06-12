@@ -21,26 +21,26 @@ public class Ozai extends Fire {
         skills.setDamage(0, 25);
         skills.setRequiredEnergy(0,30);
         skills.setRange(0,1,3,4,5,7);
-        skills.setSkillName(0,"ÆÄÀÌ¾î º¼");
+        skills.setSkillName(0,"íŒŒì´ì–´ ë³¼");
     }
     public void skill2(){
         skills.setDamage(1, 20);
         skills.setRequiredEnergy(1,40);
         skills.setRange(1,0,1,2,3,4,5,6,7,8);
-        skills.setSkillName(1,"ÆÄÀÌ¾î Åä³×ÀÌµµ");
+        skills.setSkillName(1,"íŒŒì´ì–´ í† ë„¤ì´ë„");
     }
     public void skill3(){
         skills.setDamage(2,25);
         skills.setRequiredEnergy(2,30);
         skills.setRange(2,0,2,3,5,6,8);
-        skills.setSkillName(2,"ÆÄÀÌ¾î ½½·¡½¬");
+        skills.setSkillName(2,"íŒŒì´ì–´ ìŠ¬ë˜ì‰¬");
     }
     public void skill4(){
         skills.setDamage(3,20);
         skills.setRequiredEnergy(3,30);
         skills.setRange(3,3,4,5);
         skills.setBurnTick(3, 3);
-        skills.setSkillName(3,"ÇÃ¶óÁî¸¶ ºĞ»ç");
+        skills.setSkillName(3,"í”Œë¼ì¦ˆë§ˆ ë¶„ì‚¬");
     }
     public void skill5(){
         skills.setDamage(4, 0);

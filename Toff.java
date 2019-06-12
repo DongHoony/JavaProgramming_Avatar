@@ -34,12 +34,12 @@ public class Toff extends Earth{
     public void skill3() {
         skills.setDamage(2, 30);
         skills.setRange(2, 1,2,5,6,7,8);
-        skills.setSkillName(0, "바위술사의 벽");
+        skills.setSkillName(2, "바위술사의 벽");
         skills.setRequiredEnergy(2, 25);
     }
     public void skill4() {
         skills.setDamage(3, 40);
-        skills.setRange(3, 1,2,3,4,6);
+        skills.setRange(3, 1,3,4,5,7);
         skills.setSkillName(3, "진흙 분쇄");
         skills.setRequiredEnergy(3, 30);
     }

@@ -21,27 +21,27 @@ public class Zuko extends Fire {
         skills.setDamage(0, 30);
         skills.setRequiredEnergy(0,25);
         skills.setRange(0,1,3,4,5,7);
-        skills.setSkillName(0,"ÆÄÀÌ¾î º¼");
+        skills.setSkillName(0,"íŒŒì´ì–´ ë³¼");
 
     }
     public void skill2(){
         skills.setDamage(1, 20);
         skills.setRequiredEnergy(1,30);
         skills.setRange(1,3,4,5);
-        skills.setSkillName(1,"ÇÃ·¹ÀÓ ÈÙ");
-        skills.setBurnTick(0, 3);
+        skills.setSkillName(1,"í”Œë ˆì„ íœ ");
+        skills.setBurnTick(1, 3);
     }
     public void skill3(){
         skills.setDamage(2,35);
         skills.setRequiredEnergy(2,25);
         skills.setRange(2,0,2,6,8);
-        skills.setSkillName(2,"È­¿° ¹æ»ç");
+        skills.setSkillName(2,"í™”ì—¼ ë°©ì‚¬");
     }
     public void skill4(){
         skills.setDamage(3,70);
         skills.setRequiredEnergy(3,50);
         skills.setRange(3,4);
-        skills.setSkillName(3,"ÆÄÀÌ¾î ÇÇ½ºÆ®");
+        skills.setSkillName(3,"íŒŒì´ì–´ í”¼ìŠ¤íŠ¸");
     }
     public void skill5(){
         skills.setDamage(4, 0);

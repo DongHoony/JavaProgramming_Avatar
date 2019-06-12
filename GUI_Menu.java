@@ -4,6 +4,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class GUI_Menu extends JFrame {
     private JButton p2ConfirmBtn;
     private JButton p1ConfirmBtn;
     private JPanel guiBoard0, guiBoard1, guiBoard2, guiBoard3, guiBoard4, guiBoard5, guiBoard6, guiBoard7, guiBoard8, guiBoard9, guiBoard10, guiBoard11;
-    private JTextPane guiLog;
+    JTextPane guiLog;
     private JLabel p1HealthLabel;
     private JLabel p1EnergyLabel;
     private JLabel p2HealthLabel;
@@ -53,6 +54,9 @@ public class GUI_Menu extends JFrame {
     private JPanel p2m4Panel;
     private JPanel p2s5Panel;
     private JPanel p2m5Panel;
+    private JComboBox p1SelCharBox;
+    private JButton gameStartBtn;
+    private JComboBox p2SelCharBox;
     private JLabel p1s1Label, p1s2Label, p1s3Label, p1s4Label, p1s5Label, p2s1Label, p2s2Label, p2s3Label, p2s4Label, p2s5Label;
     private JLabel[] moveLabels = {p1s1Label, p1s2Label, p1s3Label, p1s4Label, p1s5Label, p2s1Label, p2s2Label, p2s3Label, p2s4Label, p2s5Label};
     private JLabel p1m1Label, p1m2Label, p1m3Label, p1m4Label, p1m5Label, p2m1Label, p2m2Label, p2m3Label, p2m4Label, p2m5Label;
@@ -65,33 +69,73 @@ public class GUI_Menu extends JFrame {
     private JButton[] p1Btn = {p1m1, p1m2, p1m3, p1m4, p1m5, p1s1, p1s2, p1s3, p1s4, p1s5}, p2Btn = {p2m1, p2m2, p2m3, p2m4, p2m5, p2s1, p2s2, p2s3, p2s4, p2s5};
     private JButton[] p1SkillQBtn = {p1SkillQ1Btn, p1SkillQ2Btn, p1SkillQ3Btn};
     private JButton[] p2SkillQBtn = {p2SkillQ1Btn, p2SkillQ2Btn, p2SkillQ3Btn};
-    public static boolean isP1Confirmed, isP2Confirmed;
+    public static boolean isP1Confirmed, isP2Confirmed, isGameStarted;
+    public static int p1Char, p2Char;
     public static char[] p1SkillMoves, p2SkillMoves;
     JLabel p1Label, p2Label;
 
 
     public void logAppend(String s) {
         guiLog.setText(guiLog.getText() + s);
-        guiLog.setCaretPosition(guiLog.getDocument().getLength());
     }
 
     public void setP1HealthBar(int h) {
         p1HealthLabel.setText(String.format("HEALTH : %d", h));
+        while (h != p1HealthBar.getValue()){
+            if (p1HealthBar.getValue() > h){
+                p1HealthBar.setValue(p1HealthBar.getValue() - 1);
+                try{Thread.sleep(10);} catch(InterruptedException e) {}
+            }
+            else{
+                p1HealthBar.setValue(p1HealthBar.getValue() + 1);
+                try{Thread.sleep(10);} catch(InterruptedException e) {}
+            }
+        }
         p1HealthBar.setValue(h);
     }
 
     public void setP2HealthBar(int h) {
         p2HealthLabel.setText(String.format("HEALTH : %d", h));
+        while (h != p2HealthBar.getValue()){
+            if (p2HealthBar.getValue() > h){
+                p2HealthBar.setValue(p2HealthBar.getValue() - 1);
+                try{Thread.sleep(10);} catch(InterruptedException e) {}
+            }
+            else{
+                p2HealthBar.setValue(p2HealthBar.getValue() + 1);
+                try{Thread.sleep(10);} catch(InterruptedException e) {}
+            }
+        }
         p2HealthBar.setValue(h);
     }
 
     public void setP1EnergyBar(int e) {
         p1EnergyLabel.setText(String.format("ENERGY : %d", e));
+        while (e != p1EnergyBar.getValue()){
+            if (p1EnergyBar.getValue() > e){
+                p1EnergyBar.setValue(p1EnergyBar.getValue() - 1);
+                try{Thread.sleep(10);} catch(InterruptedException ee) {}
+            }
+            else{
+                p1EnergyBar.setValue(p1EnergyBar.getValue() + 1);
+                try{Thread.sleep(10);} catch(InterruptedException ee) {}
+            }
+        }
         p1EnergyBar.setValue(e);
     }
 
     public void setP2EnergyBar(int e) {
         p2EnergyLabel.setText(String.format("ENERGY : %d", e));
+        while (e != p2EnergyBar.getValue()){
+            if (p2EnergyBar.getValue() > e){
+                p2EnergyBar.setValue(p2EnergyBar.getValue() - 1);
+                try{Thread.sleep(10);} catch(InterruptedException ee) {}
+            }
+            else{
+                p2EnergyBar.setValue(p2EnergyBar.getValue() + 1);
+                try{Thread.sleep(10);} catch(InterruptedException ee) {}
+            }
+        }
         p2EnergyBar.setValue(e);
     }
 
@@ -106,10 +150,11 @@ public class GUI_Menu extends JFrame {
         // Aang, Giaso, Toff, Bumi, Katara, Pakku, Zuko, Ozai
 //        String url1 = String.format("/img/%d.png", p1CharacterNum);
 //        Image img = Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource(url1));
+        System.out.printf("%d %d ", p1CharacterNum, p2CharacterNum);
         BufferedImage p1Pic = ImageIO.read(new File(String.format("img/%d.png", p1CharacterNum)));
         BufferedImage p2Pic = ImageIO.read(new File(String.format("img/%d.png", p2CharacterNum)));
-        p1Label = new JLabel(new ImageIcon(p1Pic.getScaledInstance(45, 90, Image.SCALE_SMOOTH)));
-        p2Label = new JLabel(new ImageIcon(p2Pic.getScaledInstance(45, 90, Image.SCALE_SMOOTH)));
+        p1Label = new JLabel(new ImageIcon(p1Pic.getScaledInstance(60, 120, Image.SCALE_SMOOTH)));
+        p2Label = new JLabel(new ImageIcon(p2Pic.getScaledInstance(60, 120, Image.SCALE_SMOOTH)));
 
 
         for (int i = 0; i < 4; i++) {
@@ -176,9 +221,30 @@ public class GUI_Menu extends JFrame {
         this.setContentPane(menuGui);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setBounds(100, 100, 1700, 700);
+        this.setBounds(100, 100, 1600, 850);
         this.setResizable(false);
 
+
+        gameStartBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(p1SelCharBox.getSelectedIndex() == -1 || p2SelCharBox.getSelectedIndex() == -1){
+                    logAppend("캐릭터를 골라 주세요.\n");
+                    return;
+                }
+
+
+                gameStartBtn.setEnabled(false);
+                p1SelCharBox.setEnabled(false);
+                p2SelCharBox.setEnabled(false);
+                gameStartBtn.setVisible(false);
+                p1SelCharBox.setVisible(false);
+                p2SelCharBox.setVisible(false);
+                isGameStarted = true;
+                p1Char = p1SelCharBox.getSelectedIndex() + 1;
+                p2Char = p2SelCharBox.getSelectedIndex() + 1;
+            }
+        });
 
         for (JButton btn : p1Btn) {
             btn.addActionListener(this::actionPerformed);
@@ -287,14 +353,14 @@ public class GUI_Menu extends JFrame {
                     }
                     p1ResetBtn.setEnabled(false);
                 } else {
-                    logAppend("ENERGY LACK !\n");
+                    logAppend("\n에너지가 모자랍니다. !\n");
                     System.out.println("LACK OF ENERGY !");
                     p1ConfirmBtn.setEnabled(true);
                 }
             }
             // IF YOU PICK LESS THAN 3
             else {
-                logAppend("PICK 3 SKILLS/MOVES\n");
+                logAppend("\n3개의 움직임을 모두 골라 주세요.\n");
                 System.out.println("PICK 3 SKILLS/MOVES");
                 p1ConfirmBtn.setEnabled(true);
             }
@@ -344,6 +410,25 @@ public class GUI_Menu extends JFrame {
         }
     }
 
+    public void setBtnsDisable(){
+        for (JButton b : p1Btn) {
+            b.setEnabled(false);
+        }
+        for (JButton b : p2Btn) {
+            b.setEnabled(false);
+        }
+        for (JButton b : p2SkillQBtn) {
+            b.setEnabled(false);
+        }
+        for (JButton b : p1SkillQBtn) {
+            b.setEnabled(false);
+        }
+        p1ResetBtn.setEnabled(false);
+        p2ResetBtn.setEnabled(false);
+        p1ConfirmBtn.setEnabled(false);
+        p2ConfirmBtn.setEnabled(false);
+    }
+
     public void setBtnsActive() {
         for (JButton b : p1Btn) {
             b.setEnabled(true);
@@ -389,8 +474,8 @@ public class GUI_Menu extends JFrame {
     }
 
     public void refreshGuiBoard() {
-        p1Label.setBounds(0, 0, 50, 100);
-        p2Label.setBounds(50, 0, 50, 100);
+        p1Label.setBounds(5, 5, 55, 110);
+        p2Label.setBounds(60, 5, 55, 110);
         for (int i = 0; i < 12; i++) {
             if (GameBoard.gameboard[i / 4][i % 4][0]) {
                 guiBoard[i].add(p1Label);

@@ -10,7 +10,7 @@ public class Earthian extends Earth {
         this();
         this.isP1 = isP1;
         this.activeSkills();
-        this.name = "Earthian";
+        this.name = "Bumi";
     }
 
     public void activeSkills() {
@@ -24,30 +24,30 @@ public class Earthian extends Earth {
     public void skill1() {
         skills.setDamage(0, 30);
         skills.setRequiredEnergy(0, 30);
-        skills.setRange(0, 2, 6, 8);
+        skills.setRange(0, 2, 5, 8);
         skills.setEarthCCRange(0, 0, 0);
-        skills.setSkillName(0, "Áö°¢º¯µ¿");
+        skills.setSkillName(0, "ì§€ê°ë³€ë™");
     }
 
     public void skill2() {
         skills.setDamage(1, 20);
         skills.setRequiredEnergy(1, 40);
         skills.setRange(1, 0,1,2,3,4,5,6,7,8);
-        skills.setSkillName(1, "ÁöÁøÆÄ");
+        skills.setSkillName(1, "ì§€ì§„íŒŒ");
     }
 
     public void skill3() {
         skills.setDamage(2, 30);
         skills.setRequiredEnergy(2, 35);
         skills.setRange(2, 0, 1, 2, 6, 7, 8);
-        skills.setSkillName(2, "¿©Áø");
+        skills.setSkillName(2, "ì—¬ì§„");
     }
 
     public void skill4() {
         skills.setDamage(3, 70);
         skills.setRequiredEnergy(3, 50);
         skills.setRange(3, 4);
-        skills.setSkillName(3, "±×¶ó¿îµå ½½·¥");
+        skills.setSkillName(3, "ê·¸ë¼ìš´ë“œ ìŠ¬ë¨");
     }
 
     public void skill5() {

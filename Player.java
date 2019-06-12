@@ -42,20 +42,23 @@ public abstract class Player implements Attackable {
         return range;
     }
 
-    public void attack(Player p, Player target, SkillSet s, int skillNum, GameBoard g) {
+    public void attack(Player p, Player target, SkillSet s, int skillNum, GameBoard g, GUI_Menu gui) {
+
+        gui.logAppend(String.format("\n%s의 %s!\n", p.name, p.skills.skillName[skillNum]));
 
         // IF GUARD : GUARD ON
         if (skillNum == 4) {
             p.skills.isGuardOn = true;
+            gui.logAppend(String.format("\n%s는 가드를 올렸습니다.\n이번 턴의 다음 공격에 피해를 덜 받습니다.\n", p.name));
             System.out.printf("%s GUARD ON\n", p.name);
         }
 
         // Heal up
-        System.out.printf("HEAL AMOUNT : %d", p.skills.healAmount[skillNum]);
-        p.setHealth(p.getHealth() + p.skills.healAmount[skillNum]);
-        System.out.printf("NOW HEALTH : %d", p.getHealth());
-        if (p.getHealth() > 100) p.setHealth(100);
-
+        if (p.skills.healAmount[skillNum] > 0) {
+            gui.logAppend(String.format("\n%s는 %d의 체력을 치유했습니다.\n", p.name, 30));
+            p.setHealth(p.getHealth() + p.skills.healAmount[skillNum]);
+            if (p.getHealth() > 100) p.setHealth(100);
+        }
         // ATTACK HAS TO BE PLAYED *AFTER* SKILL MODIFIED
         boolean isP1 = p.isP1;
 
@@ -76,11 +79,14 @@ public abstract class Player implements Attackable {
                     if (g.gameboard[skillRange[0]][skillRange[1]][isP1 ? 1 : 0]) {
                         // DAMAGE
                         if (target.skills.isGuardOn) {
-                            target.setHealth(target.getHealth() - p.skills.damage[skillNum] + 10);
+                            target.setHealth(target.getHealth() - p.skills.damage[skillNum] + 15);
                             target.skills.isGuardOn = false;
-                            System.out.printf("DAMAGED %d! BUT GUARD WAS ON ! DAMAGED %d\n", p.skills.damage[skillNum], p.skills.damage[skillNum] - 10);
+                            System.out.printf("DAMAGED %d! BUT GUARD WAS ON ! DAMAGED %d\n", p.skills.damage[skillNum], p.skills.damage[skillNum] - 15);
+                            gui.logAppend(String.format("\n%s는 %s에게 %s를(을) 적중시켰습니다 !\n%d (-15)의 피해를 입혔습니다.\n", p.name, target.name, p.skills.skillName[skillNum], p.skills.damage[skillNum]));
+                            gui.logAppend(String.format("\n%s의 가드가 깨졌습니다.\n", target.name));
                         } else {
                             target.setHealth(target.getHealth() - p.skills.damage[skillNum]);
+                            gui.logAppend(String.format("\n%s는 %s에게 %s를(을) 적중시켰습니다 !\n%d의 피해를 입혔습니다.\n", p.name, target.name, p.skills.skillName[skillNum], p.skills.damage[skillNum]));
                             System.out.printf("DAMAGED %d!\n", p.skills.damage[skillNum]);
                         }
                         // BURNTICK
@@ -98,6 +104,7 @@ public abstract class Player implements Attackable {
         //Earth cc
         if (p.skills.earthCCRange[skillNum][0] != -3) {
             System.out.println("CC ACTIVE !");
+            gui.logAppend(String.format("\n%s가 땅을 들어올렸습니다 !\n", p.name));
             int ty = playerPos[0] - p.skills.earthCCRange[skillNum][0];
             int tx = playerPos[1] + p.skills.earthCCRange[skillNum][1];
             if (ty < 3 && ty >= 0 && tx < 4 && tx >= 0) {
