@@ -37,8 +37,8 @@ public class Pakku extends Water{
 	public void skill3() {
 		skills.setDamage(2, 30);
 		skills.setRange(2, 0,2,4,6,8);
-		skills.setSkillName(0, "블리자드");
-		skills.setRequiredEnergy(0, 25);
+		skills.setSkillName(2, "블리자드");
+		skills.setRequiredEnergy(2, 25);
 	}
 	public void skill4() {
 		skills.setDamage(3, 30);

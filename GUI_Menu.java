@@ -353,7 +353,7 @@ public class GUI_Menu extends JFrame {
                     }
                     p1ResetBtn.setEnabled(false);
                 } else {
-                    logAppend("\n에너지가 모자랍니다. !\n");
+                    logAppend("\n에너지가 모자랍니다.\n");
                     System.out.println("LACK OF ENERGY !");
                     p1ConfirmBtn.setEnabled(true);
                 }
@@ -398,12 +398,12 @@ public class GUI_Menu extends JFrame {
                     }
                     p2ResetBtn.setEnabled(false);
                 } else {
-                    logAppend("ENERGY LACK !\n");
+                    logAppend("\n에너지가 모자랍니다.\n");
                     System.out.println("LACK OF ENERGY !");
                     p2ConfirmBtn.setEnabled(true);
                 }
             } else {
-                logAppend("PICK 3 SKILLS/MOVES\n");
+                logAppend("\n3개의 움직임을 모두 골라 주세요.\n");
                 System.out.println("PICK 3 SKILLS/MOVES");
                 p2ConfirmBtn.setEnabled(true);
             }

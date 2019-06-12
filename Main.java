@@ -228,10 +228,11 @@ public class Main {
             if (p1.isDead()) System.exit(0);
 
             // ADD ENERGY 20 when turn ends
-            p1.setEnergy(p1.getEnergy() + 20);
-            p2.setEnergy(p2.getEnergy() + 20);
-            p1.setEnergy(p1.getEnergy() > 100 ? 100 : p1.getEnergy());
-            p2.setEnergy(p2.getEnergy() > 100 ? 100 : p2.getEnergy());
+
+            gui.logAppend(String.format("\n턴을 종료하고 에너지를 회복합니다.\n"));
+            Thread.sleep(1000);
+            p1.setEnergy(p1.getEnergy() + 20 > 100 ? 100 : p1.getEnergy() + 20);
+            p2.setEnergy(p2.getEnergy() + 20 > 100 ? 100 : p2.getEnergy() + 20);
 
             //Guard off when turn ends
             p1.skills.isGuardOn = false;
