@@ -21,27 +21,27 @@ public class Katara extends Water{
     public void skill1() {
         skills.setDamage(0, 0);
         skills.setRange(0, 4);
-        skills.setSkillName(0, "Healing Wave");
-        skills.setHealAmount(0, 20);
+        skills.setSkillName(0, "치유의 물결");
+        skills.setHealAmount(0, 30);
         skills.setRequiredEnergy(0, 20);
     }
     public void skill2() {
-        skills.setDamage(1, 35);
-        skills.setRequiredEnergy(1,30);
+        skills.setDamage(1, 40);
+        skills.setRequiredEnergy(1,20);
         skills.setRange(1,2,4,6);
-        skills.setSkillName(1, "Prison of Water");
+        skills.setSkillName(1, "물의 감옥");
     }
     public void skill3() {
-        skills.setDamage(2,30);
+        skills.setDamage(2,25);
         skills.setRequiredEnergy(2, 30);
         skills.setRange(2,0,2,4,6,8);
-        skills.setSkillName(2, "Ebb tide" );
+        skills.setSkillName(2, "썰물");
     }
     public void skill4() {
-        skills.setDamage(3, 0);
-        skills.setRequiredEnergy(3, 0);
-        skills.setRange(3, 4);
-        skills.setSkillName(3, "Shield of Water");
+        skills.setDamage(3, 25);
+        skills.setRequiredEnergy(3, 30);
+        skills.setRange(3, 1,3,4,5,7);
+        skills.setSkillName(3, "해일");
     }
     public void skill5(){
         skills.setDamage(4, 0);

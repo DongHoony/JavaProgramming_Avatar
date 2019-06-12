@@ -1,5 +1,4 @@
 package Avatar;
-
 public class GameBoard {
     static boolean[][][] gameboard;
     static int[][] earthCCBoard;

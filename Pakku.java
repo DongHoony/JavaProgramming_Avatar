@@ -23,27 +23,28 @@ public class Pakku extends Water{
 	public void skill1() {
 		skills.setDamage(0, 0);
 		skills.setRange(0, 4);
-		skills.setSkillName(0, "Healing Wave");
+		skills.setHealAmount(0, 30);
+		skills.setSkillName(0, "치유의 물결");
 		skills.setRequiredEnergy(0, 20);
 
 	}
 	public void skill2() {
 		skills.setDamage(1, 40);
 		skills.setRange(1, 3,4,5);
-		skills.setSkillName(1, "Ice Spear");
+		skills.setSkillName(1, "아이스 스피어");
 		skills.setRequiredEnergy(1, 20);
 	}
 	public void skill3() {
 		skills.setDamage(2, 30);
 		skills.setRange(2, 0,2,4,6,8);
-		skills.setSkillName(0, "Blizzard");
-		skills.setRequiredEnergy(0, 30);
+		skills.setSkillName(0, "블리자드");
+		skills.setRequiredEnergy(0, 25);
 	}
 	public void skill4() {
-		skills.setDamage(3, 0);
-		skills.setRange(3, 4);
-		skills.setSkillName(3, "Shield of Ice");
-		skills.setRequiredEnergy(3, 20);
+		skills.setDamage(3, 30);
+		skills.setRange(3, 1,3,4,5,7);
+		skills.setSkillName(3, "아이스 에이지");
+		skills.setRequiredEnergy(3, 25);
 	}
 	public void skill5(){
 		skills.setDamage(4, 0);

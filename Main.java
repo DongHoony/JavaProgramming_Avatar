@@ -15,22 +15,64 @@ public class Main {
         return ret;
     }
 
-
     public static void showSleep(GameBoard g) throws InterruptedException {
         g.showBoard();
         Thread.sleep(500);
     }
-    static Player p1, p2;
 
+    public static void makeCharacter(int isP1, int c){
+
+        switch(c){
+            case 1:
+                t[isP1] = new Aang((isP1 == 1) ? true : false);
+                break;
+            case 2:
+                t[isP1] = new GiAso((isP1 == 1) ? true : false);
+                break;
+            case 3:
+                t[isP1] = new Toff((isP1 == 1) ? true : false);
+                break;
+            case 4:
+                t[isP1] = new Earthian((isP1 == 1) ? true : false);
+                break;
+            case 5:
+                t[isP1] = new Katara((isP1 == 1) ? true : false);
+                break;
+            case 6:
+                t[isP1] = new Pakku((isP1 == 1) ? true : false);
+                break;
+            case 7:
+                t[isP1] = new Zuko((isP1 == 1) ? true : false);
+                break;
+            case 8:
+                t[isP1] = new Ozai((isP1 == 1) ? true : false);
+                break;
+
+        }
+    }
+
+    static Player p1, p2;
+    static Player[] t = {p2, p1};
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         Scanner sc = new Scanner(System.in);
         GUI_Menu gui = new GUI_Menu();
 
         //CHARACTER SELECT : USE IF TO GET P1, P2 CHARACTERS
-        p1 = new Earthian(true);
-        p2 = new Zuko(false);
+
+        System.out.println("SELECT CHARACTER : 1_Aang, 2_Giaso, 3_Toff, 4_Bumi, 5_Katara, 6_Pakku, 7_Zuko, 8_Ozai");
+        System.out.print("P1 : ");
+        int p1Char = sc.nextInt();
+        System.out.print("P2 : ");
+        int p2Char = sc.nextInt();
+
+        makeCharacter(1, p1Char);
+        makeCharacter(0, p2Char);
+
         // Aang, Giaso, Toff, Bumi, Katara, Pakku, Zuko, Ozai
-        gui.setCharacterImage(4, 7);
+        gui.setCharacterImage(p1Char, p2Char);
+
+        p1 = t[1];
+        p2 = t[0];
 
         //ATTACH CHARACTERS TO GAME BOARD
         GameBoard g = new GameBoard(p1, p2);
@@ -39,7 +81,7 @@ public class Main {
         while (true) {
 
             gui.refreshGuiBoard();
-
+            gui.refreshBars();
 
             //TURN BY TURN, CHANGES FIRST
             turnP1 = !turnP1;
@@ -90,45 +132,45 @@ public class Main {
                         range = p1.getRangeByIntArray(p1, p1.skills, Integer.parseInt(Character.toString(cmdP1[i])) - 1, g);
                         gui.blinkBoard(convertIntegers(range), true);
                         p1.attack(p1, p2, p1.skills, Integer.parseInt(Character.toString(cmdP1[i])) - 1, g);
-                        gui.setP1EnergyBar(p1.getEnergy());
-                        gui.setP2HealthBar(p2.getHealth());
+                        gui.refreshBars();
                         showSleep(g);
                         if (p2.isDead) System.exit(0);
-                    }
-                    //P1 MOVE
+                    } else if (cmdP1[i] == 'E') p1.setEnergy(p1.getEnergy() + 30);
+                        //P1 MOVE
                     else {
                         p1.move(g, cmdP1[i]);
                         showSleep(g);
 
                     }
                     gui.refreshGuiBoard();
+                    gui.refreshBars();
                     //P2 ATTACK
                     if (Character.toString(cmdP2[i]).matches("[1-5]+")) {
                         range = p2.getRangeByIntArray(p2, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g);
                         gui.blinkBoard(convertIntegers(range), false);
                         p2.attack(p2, p1, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g);
-                        gui.setP2EnergyBar(p2.getEnergy());
-                        gui.setP1HealthBar(p1.getHealth());
+                        gui.refreshBars();
                         showSleep(g);
                         if (p1.isDead) System.exit(0);
-                    }
-                    //P2 MOVE
+                    } else if (cmdP2[i] == 'E') p2.setEnergy(p2.getEnergy() + 30);
+                        //P2 MOVE
                     else {
                         p2.move(g, cmdP2[i]);
                         showSleep(g);
 
                     }
                     gui.refreshGuiBoard();
+                    gui.refreshBars();
                 } else {
                     if (Character.toString(cmdP2[i]).matches("[1-5]+")) {
                         range = p2.getRangeByIntArray(p2, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g);
                         gui.blinkBoard(convertIntegers(range), false);
                         p2.attack(p2, p1, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g);
-                        gui.setP2EnergyBar(p2.getEnergy());
-                        gui.setP1HealthBar(p1.getHealth());
+                        gui.refreshBars();
                         showSleep(g);
                         if (p1.isDead) System.exit(0);
-                    } else {
+                    } else if (cmdP2[i] == 'E') p2.setEnergy(p2.getEnergy() + 30);
+                    else {
                         p2.move(g, cmdP2[i]);
                         showSleep(g);
 
@@ -138,27 +180,28 @@ public class Main {
                         range = p1.getRangeByIntArray(p1, p1.skills, Integer.parseInt(Character.toString(cmdP1[i])) - 1, g);
                         gui.blinkBoard(convertIntegers(range), true);
                         p1.attack(p1, p2, p1.skills, Integer.parseInt(Character.toString(cmdP1[i])) - 1, g);
-                        gui.setP1EnergyBar(p1.getEnergy());
-                        gui.setP2HealthBar(p2.getHealth());
+                        gui.refreshBars();
                         showSleep(g);
                         if (p2.isDead) System.exit(0);
-                    } else {
+                    } else if (cmdP1[i] == 'E') p1.setEnergy(p1.getEnergy() + 30);
+                    else {
                         p1.move(g, cmdP1[i]);
                         showSleep(g);
                     }
                     gui.refreshGuiBoard();
+                    gui.refreshBars();
                 }
             }
             // gets burn damage when turn ends
             if (p1.getBurnTick() > 0) {
-                p1.setHealth(p1.getHealth() - 10);
+                p1.setHealth(p1.getHealth() - 5);
                 p1.setBurnTick(p1.getBurnTick() - 1);
-                System.out.println("P1 : 10 BURN DAMAGED!");
+                System.out.println("P1 : 5 BURN DAMAGED!");
             }
             if (p2.getBurnTick() > 0) {
-                p2.setHealth(p2.getHealth() - 10);
+                p2.setHealth(p2.getHealth() - 5);
                 p2.setBurnTick(p2.getBurnTick() - 1);
-                System.out.println("P2 : 10 BURN DAMAGED!");
+                System.out.println("P2 : 5 BURN DAMAGED!");
             }
             if (p2.isDead()) System.exit(0);
             if (p1.isDead()) System.exit(0);
@@ -178,6 +221,7 @@ public class Main {
             gui.isP1Confirmed = false;
             gui.isP2Confirmed = false;
             gui.refreshGuiBoard();
+            gui.refreshBars();
             gui.setBtnsActive();
         }
     }
