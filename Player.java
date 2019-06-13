@@ -5,13 +5,11 @@ import java.util.ArrayList;
 public abstract class Player implements Attackable {
     private int health, energy, burnTick;
     public boolean isP1;
-    public boolean isDead;
     public String name;
     SkillSet skills;
 
 
     public Player() {
-        this.isDead = false;
         this.health = 100;
         this.energy = 100;
         this.skills = new SkillSet();
@@ -42,7 +40,9 @@ public abstract class Player implements Attackable {
         return range;
     }
 
-    public void attack(Player p, Player target, SkillSet s, int skillNum, GameBoard g, GUI_Menu gui) {
+    public void attack(SkillSet s, int skillNum, GameBoard g, GUI_Menu gui) {
+        Player p = this;
+        Player target = (p.equals(Main.p1)) ? Main.p2 : Main.p1;
 
         gui.logAppend(String.format("\n%s의 %s!\n", p.name, p.skills.skillName[skillNum]));
 
@@ -89,10 +89,11 @@ public abstract class Player implements Attackable {
                             gui.logAppend(String.format("\n%s는 %s에게 %s를(을) 적중시켰습니다 !\n%d의 피해를 입혔습니다.\n", p.name, target.name, p.skills.skillName[skillNum], p.skills.damage[skillNum]));
                             System.out.printf("DAMAGED %d!\n", p.skills.damage[skillNum]);
                         }
+
+                        target.health = (target.health < 0) ? 0 : target.health;
+
                         // BURNTICK
                         target.setBurnTick(p.skills.burnTick[skillNum]);
-                        // DEATH CHECK
-                        deathCheck(p, target);
                     }
                 }
             }
@@ -114,46 +115,41 @@ public abstract class Player implements Attackable {
         }
     }
 
-    public void deathCheck(Player p, Player target) {
-        if (target.health <= 0) {
-            System.out.printf("%s KILLED %s ! GAME OVER ! \n", (p.isP1) ? "P1" : "P2", (p.isP1) ? "P2" : "P1");
-            target.isDead = true;
-        }
+    public int takeBurnDamageAndReturnTickBefore() {
+        Player p = this;
+        if (p.getBurnTick() > 0) {
+            p.setHealth(p.getHealth() - 5);
+            p.setBurnTick(p.getBurnTick() - 1);
+            }
+        return p.getBurnTick() + 1;
     }
 
     public boolean isDead() {
-        return (this.health < 0) ? true : false;
+        return (this.health <= 0) ? true : false;
     }
 
     //getter, setter
     public int getBurnTick() {
         return burnTick;
     }
-
     public void setHealth(int h) {
         this.health = h;
     }
-
     public void setBurnTick(int b) {
         this.burnTick = b;
     }
-
     public int getHealth() {
         return this.health;
     }
-
     public void setEnergy(int e) {
         this.energy = e;
     }
-
     public int getEnergy() {
         return this.energy;
     }
 
     public void move(GameBoard g, char moveToward) {
         int[] pos = g.getPlayerPos(this.isP1);
-        System.out.printf("Now pos is %d, %d\n", pos[0], pos[1]);
-
         // U D L R:
         int[] dy = {-1, 1, 0, 0};
         int[] dx = {0, 0, -1, 1};
@@ -162,55 +158,11 @@ public abstract class Player implements Attackable {
         for (int i = 0; i < 4; i++) {
             if (index[i] == moveToward) idx = i;
         }
-
         int ty = pos[0] + dy[idx];
         int tx = pos[1] + dx[idx];
         if (ty >= 0 && ty < 3 && tx >= 0 && tx < 4 && !g.gameboard[ty][tx][2]) {
             g.setPlayerPos(this.isP1, ty, tx);
-            System.out.printf("Moved %d to %d, %d\n", isP1 ? 1 : 2, pos[0], pos[1] - 1);
-        } else {
-            System.out.println("Cant move more.");
+
         }
-
-
-//        switch(moveToward){
-//            case 'L':
-//                if (pos[1] == 0){
-//                    System.out.println("Cannot move more");
-//                }
-//                else{
-//                    g.setPlayerPos(this,  this.isP1, pos[0], pos[1]-1);
-//                    System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0], pos[1]-1);
-//                }
-//                break;
-//            case 'R':
-//                if (pos[1] == 3){
-//                    System.out.println("Cannot move more");
-//                }
-//                else{
-//                    g.setPlayerPos(this,  this.isP1, pos[0], pos[1]+1);
-//                    System.out.printf("Moved P%d to %d, %d\n", isP1?1:2, pos[0], pos[1]+1);
-//                }
-//                break;
-//            case 'U':
-//                if (pos[0] == 0){
-//                    System.out.println("Cannot move more");
-//                }
-//                else{
-//                    g.setPlayerPos(this,  this.isP1, pos[0]-1, pos[1]);
-//                    System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0]-1, pos[1]);
-//                }
-//                break;
-//            case 'D':
-//                if (pos[0] == 2){
-//                    System.out.println("Cannot move more");
-//                }
-//                else{
-//                    g.setPlayerPos(this,  this.isP1, pos[0]+1, pos[1]);
-//                    System.out.printf("Moved %d to %d, %d\n", isP1?1:2, pos[0]+1, pos[1]);
-//                }
-//                break;
-//
-//        }
     }
 }

@@ -23,7 +23,7 @@ public class GiAso extends Air {
     public void skill1() {
         skills.setDamage(0, 20);
         skills.setRequiredEnergy(0, 30);
-        skills.setRange(0, 1, 3, 4, 5, 7);
+        skills.setRange(0, 0,2,3,4,6);
         skills.setSkillName(0, "날갯짓");
 
     }

@@ -108,7 +108,6 @@ public class Main {
 
             turnP1 = !turnP1;
             gui.guiLog.setText(String.format("\n%s이(가) 선공입니다.\n", (turnP1) ? p1.name : p2.name));
-            g.showBoard();
 
             //wait for confirm
             while (true) {
