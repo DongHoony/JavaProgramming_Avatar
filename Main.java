@@ -3,7 +3,6 @@ package Avatar;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
 
@@ -15,14 +14,9 @@ public class Main {
         return ret;
     }
 
-    public static void showSleep(GameBoard g) throws InterruptedException {
-        g.showBoard();
-        Thread.sleep(500);
-    }
+    public static void makeCharacter(int isP1, int c) {
 
-    public static void makeCharacter(int isP1, int c){
-
-        switch(c){
+        switch (c) {
             case 1:
                 t[isP1] = new Aang((isP1 == 1) ? true : false);
                 break;
@@ -51,16 +45,47 @@ public class Main {
         }
     }
 
+    public static void attack(boolean isP1, char cmd, GUI_Menu gui, GameBoard g) throws InterruptedException {
+        Player p = (isP1) ? p1 : p2;
+        switch (cmd) {
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+                ArrayList<Integer> range = p.getRangeByIntArray(p, p.skills, Integer.parseInt(Character.toString(cmd)) - 1, g);
+                gui.blinkBoard(convertIntegers(range), true);
+                p.attack(p.skills, Integer.parseInt(Character.toString(cmd)) - 1, g, gui);
+                gui.refreshBars();
+                Thread.sleep(500);
+                break;
+            case 'E':
+                gui.logAppend(String.format("\n%s은(는) 기력을 회복합니다.\n", p.name));
+                Thread.sleep(1000);
+                p.setEnergy((p.getEnergy() + 30 > 100) ? 100 : p.getEnergy() + 30);
+                break;
+            default:
+                p.move(g, cmd);
+                Thread.sleep(500);
+        }
+        gui.refreshGuiBoard();
+        gui.refreshBars();
+    }
+
+    public static int setWinner(Player p) {
+        return (p.isP1) ? 1 : 2;
+    }
+
     static Player p1, p2;
     static Player[] t = {p2, p1};
+
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 
         GUI_Menu gui = new GUI_Menu();
-
         gui.setBtnsDisable();
 
         //CHARACTER SELECT : USE IF TO GET P1, P2 CHARACTERS
-        while (!GUI_Menu.isGameStarted){
+        while (!GUI_Menu.isGameStarted) {
             Thread.sleep(100);
         }
 
@@ -68,166 +93,72 @@ public class Main {
         int p2Char = GUI_Menu.p2Char;
         makeCharacter(1, p1Char);
         makeCharacter(0, p2Char);
-
-        // Aang, Giaso, Toff, Bumi, Katara, Pakku, Zuko, Ozai
         gui.setCharacterImage(p1Char, p2Char);
-
         p1 = t[1];
         p2 = t[0];
-
         gui.setBtnsActive();
-
-        //ATTACH CHARACTERS TO GAME BOARD
         GameBoard g = new GameBoard(p1, p2);
-        ArrayList<Integer> range;
+        int winner = -1;
         boolean turnP1 = false;
-        while (true) {
 
+        //game cycle
+        while (true) {
             gui.refreshGuiBoard();
             gui.refreshBars();
 
-            //TURN BY TURN, CHANGES FIRST
             turnP1 = !turnP1;
-            System.out.printf("\n!!!! TURN %s !!!!\n", (turnP1) ? "P1" : "P2");
             gui.guiLog.setText(String.format("\n%s이(가) 선공입니다.\n", (turnP1) ? p1.name : p2.name));
             g.showBoard();
 
-            // IF READY, CONTINUE
+            //wait for confirm
             while (true) {
                 Thread.sleep(50);
                 if (gui.isP1Confirmed && gui.isP2Confirmed) break;
             }
 
-//            // Shows range print
-//            for (int i = 0; i < 5; i++) {
-//                for (int k = 0; k < 9; k++) {
-//                    if (p1.skills.range[i][k]) System.out.printf("%d", k + 1);
-//                }
-//                System.out.printf("[%d, -%d]/ ", p1.skills.damage[i], p1.skills.requiredEnergy[i]);
-//            }
-//            System.out.println();
-//            for (int i = 0; i < 5; i++) {
-//                for (int k = 0; k < 9; k++) {
-//                    if (p2.skills.range[i][k]) System.out.printf("%d", k + 1);
-//                }
-//                System.out.printf("[%d, -%d]/ ", p2.skills.damage[i], p2.skills.requiredEnergy[i]);
-//            }
-//            System.out.println();
-            //end show range print
-//
-//            System.out.printf("P1 HP: %d, EN: %d\nP1 COMMAND : ",
-//                    p1.getHealth(), p1.getEnergy());
-//            //char[] cmdP1 = sc.next().toCharArray();
-//            System.out.printf("P2 HP: %d, EN: %d\nP2 COMMAND : ",
-//                    p2.getHealth(), p2.getEnergy());
-//            //char[] cmdP2 = sc.next().toCharArray();
-
             char[] cmdP1 = gui.p1SkillMoves;
             char[] cmdP2 = gui.p2SkillMoves;
 
-            //MOVE AND ATTACK, NEED TO SIMPLIFY
-            for (int i = 0; i < 3; i++) {
-                System.out.printf("%c %c\n", cmdP1[i], cmdP2[i]);
-                //P1-P2 * 3 or P2-P1 * 3
-                if (turnP1) {
-                    //P1 ATTACK
-                    if (Character.toString(cmdP1[i]).matches("[1-5]+")) {
-                        range = p1.getRangeByIntArray(p1, p1.skills, Integer.parseInt(Character.toString(cmdP1[i])) - 1, g);
-                        gui.blinkBoard(convertIntegers(range), true);
-                        p1.attack(p1, p2, p1.skills, Integer.parseInt(Character.toString(cmdP1[i])) - 1, g, gui);
-                        gui.refreshBars();
-                        showSleep(g);
-                        if (p2.isDead) System.exit(0);
-                    } else if (cmdP1[i] == 'E') {
-                        gui.logAppend(String.format("\n%s은(는) 기력을 회복합니다.\n", p1.name));
-                        Thread.sleep(1000);
-                        p1.setEnergy((p1.getEnergy() + 30 > 100) ? 100 : p1.getEnergy() + 30);
+            if (turnP1) {
+                for (int i = 0; i < 3; i++) {
+                    attack(true, cmdP1[i], gui, g);
+                    if (p2.isDead()) {
+                        setWinner(p1);
+                        gui.showWinner(winner);
+                        System.exit(0);
                     }
-                        //P1 MOVE
-                    else {
-                        p1.move(g, cmdP1[i]);
-                        showSleep(g);
-
+                    attack(false, cmdP2[i], gui, g);
+                    if (p1.isDead()) {
+                        setWinner(p2);
+                        gui.showWinner(winner);
+                        System.exit(0);
                     }
-                    gui.refreshGuiBoard();
-                    gui.refreshBars();
-                    //P2 ATTACK
-                    if (Character.toString(cmdP2[i]).matches("[1-5]+")) {
-                        range = p2.getRangeByIntArray(p2, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g);
-                        gui.blinkBoard(convertIntegers(range), false);
-                        p2.attack(p2, p1, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g, gui);
-                        gui.refreshBars();
-                        showSleep(g);
-                        if (p1.isDead) System.exit(0);
-                    } else if (cmdP2[i] == 'E') {
-                        gui.logAppend(String.format("\n%s은(는) 기력을 회복합니다.\n", p2.name));
-                        p2.setEnergy((p2.getEnergy() + 30 > 100) ? 100 : p2.getEnergy() + 30);
-                        Thread.sleep(1000);
+                }
+            } else {
+                for (int i = 0; i < 3; i++) {
+                    attack(false, cmdP2[i], gui, g);
+                    if (p1.isDead()) {
+                        setWinner(p2);
+                        gui.showWinner(winner);
+                        System.exit(0);
                     }
-                        //P2 MOVE
-                    else {
-                        p2.move(g, cmdP2[i]);
-                        showSleep(g);
-
+                    attack(true, cmdP1[i], gui, g);
+                    if (p2.isDead()) {
+                        setWinner(p1);
+                        gui.showWinner(winner);
+                        System.exit(0);
                     }
-                    gui.refreshGuiBoard();
-                    gui.refreshBars();
-                } else {
-                    if (Character.toString(cmdP2[i]).matches("[1-5]+")) {
-                        range = p2.getRangeByIntArray(p2, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g);
-                        gui.blinkBoard(convertIntegers(range), false);
-                        p2.attack(p2, p1, p2.skills, Integer.parseInt(Character.toString(cmdP2[i])) - 1, g, gui);
-                        gui.refreshBars();
-                        showSleep(g);
-                        if (p1.isDead) System.exit(0);
-                    } else if (cmdP2[i] == 'E') {
-                        gui.logAppend(String.format("\n%s은(는) 기력을 회복합니다.\n", p2.name));
-                        p2.setEnergy((p2.getEnergy() + 30 > 100) ? 100 : p2.getEnergy() + 30);
-                        Thread.sleep(1000);
-                    }
-                    else {
-                        p2.move(g, cmdP2[i]);
-                        showSleep(g);
-
-                    }
-                    gui.refreshGuiBoard();
-                    if (Character.toString(cmdP1[i]).matches("[1-5]+")) {
-                        range = p1.getRangeByIntArray(p1, p1.skills, Integer.parseInt(Character.toString(cmdP1[i])) - 1, g);
-                        gui.blinkBoard(convertIntegers(range), true);
-                        p1.attack(p1, p2, p1.skills, Integer.parseInt(Character.toString(cmdP1[i])) - 1, g, gui);
-                        gui.refreshBars();
-                        showSleep(g);
-                        if (p2.isDead) System.exit(0);
-                    } else if (cmdP1[i] == 'E') {
-                        gui.logAppend(String.format("\n%s은(는) 기력을 회복합니다.\n", p1.name));
-                        Thread.sleep(1000);
-                        p1.setEnergy((p1.getEnergy() + 30 > 100) ? 100 : p1.getEnergy() + 30);
-                    }
-                    else {
-                        p1.move(g, cmdP1[i]);
-                        showSleep(g);
-                    }
-                    gui.refreshGuiBoard();
-                    gui.refreshBars();
                 }
             }
-            // gets burn damage when turn ends
-            if (p1.getBurnTick() > 0) {
-                p1.setHealth(p1.getHealth() - 5);
-                p1.setBurnTick(p1.getBurnTick() - 1);
-                System.out.println("P1 : 5 BURN DAMAGED!");
+            if (p1.takeBurnDamageAndReturnTickBefore() > 1) {
                 gui.logAppend(String.format("\n%s은(는) 화염 데미지를 입었습니다. (남은 턴 : %d)\n", p1.name, p1.getBurnTick()));
+                if (p1.isDead()) setWinner(p2);
             }
-            if (p2.getBurnTick() > 0) {
-                p2.setHealth(p2.getHealth() - 5);
-                p2.setBurnTick(p2.getBurnTick() - 1);
-                System.out.println("P2 : 5 BURN DAMAGED!");
+            if (p2.takeBurnDamageAndReturnTickBefore() > 1) {
                 gui.logAppend(String.format("\n%s은(는) 화염 데미지를 입었습니다. (남은 턴 : %d)\n", p2.name, p2.getBurnTick()));
+                if (p2.isDead()) setWinner(p1);
             }
-            if (p2.isDead()) System.exit(0);
-            if (p1.isDead()) System.exit(0);
-
-            // ADD ENERGY 20 when turn ends
+            if (winner > 0) break;
 
             gui.logAppend(String.format("\n턴을 종료하고 에너지를 회복합니다.\n"));
             Thread.sleep(1000);
@@ -238,14 +169,13 @@ public class Main {
             p1.skills.isGuardOn = false;
             p2.skills.isGuardOn = false;
 
-            g.earthBoardRefresh();
-
             gui.isP1Confirmed = false;
             gui.isP2Confirmed = false;
+            g.earthBoardRefresh();
             gui.refreshGuiBoard();
             gui.refreshBars();
             gui.setBtnsActive();
         }
+        gui.showWinner(winner);
     }
 }
-
