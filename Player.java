@@ -49,7 +49,6 @@ public abstract class Player implements Attackable {
         if (skillNum == 4) {
             p.isGuardOn = true;
             gui.logAppend(String.format("\n%s는 가드를 올렸습니다.\n이번 턴의 다음 공격에 피해를 덜 받습니다.\n", p.name));
-            System.out.printf("%s GUARD ON\n", p.name);
         }
 
         // Heal up
@@ -80,14 +79,12 @@ public abstract class Player implements Attackable {
                         if (target.isGuardOn) {
                             target.setHealth(target.getHealth() - p.skills.damage[skillNum] + 15);
                             target.isGuardOn = false;
-                            System.out.printf("DAMAGED %d! BUT GUARD WAS ON ! DAMAGED %d\n", p.skills.damage[skillNum], p.skills.damage[skillNum] - 15);
                             gui.logAppend(String.format("\n%s는 %s에게 %s를(을) 적중시켰습니다 !\n%d (-15)의 피해를 입혔습니다.\n", p.name, target.name, p.skills.skillName[skillNum], p.skills.damage[skillNum]));
                             gui.logAppend(String.format("\n%s의 가드가 깨졌습니다.\n", target.name));
                         } else {
                             target.setHealth(target.getHealth() - p.skills.damage[skillNum]);
                             gui.logAppend(String.format("\n%s는 %s에게 %s를(을) 적중시켰습니다 !\n%d의 피해를 입혔습니다.\n", p.name, target.name, p.skills.skillName[skillNum], p.skills.damage[skillNum]));
-                            System.out.printf("DAMAGED %d!\n", p.skills.damage[skillNum]);
-                        }
+                            }
 
                         target.health = (target.health < 0) ? 0 : target.health;
 
@@ -103,7 +100,6 @@ public abstract class Player implements Attackable {
         }
         //Earth cc
         if (p.skills.earthCCRange[skillNum][0] != -3) {
-            System.out.println("CC ACTIVE !");
             gui.logAppend(String.format("\n%s가 땅을 들어올렸습니다 !\n", p.name));
             int ty = playerPos[0] - p.skills.earthCCRange[skillNum][0];
             int tx = playerPos[1] + p.skills.earthCCRange[skillNum][1];
@@ -119,7 +115,7 @@ public abstract class Player implements Attackable {
         if (p.getBurnTick() > 0) {
             p.setHealth(p.getHealth() - 5);
             p.setBurnTick(p.getBurnTick() - 1);
-            }
+        }
         return p.getBurnTick() + 1;
     }
 
@@ -131,18 +127,23 @@ public abstract class Player implements Attackable {
     public int getBurnTick() {
         return burnTick;
     }
+
     public void setHealth(int h) {
         this.health = h;
     }
+
     public void setBurnTick(int b) {
         this.burnTick = b;
     }
+
     public int getHealth() {
         return this.health;
     }
+
     public void setEnergy(int e) {
         this.energy = e;
     }
+
     public int getEnergy() {
         return this.energy;
     }

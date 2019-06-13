@@ -1,7 +1,6 @@
 package Avatar;
 
 public class SkillSet {
-
     int[][] earthCCRange = {{-3, -3}, {-3, -3}, {-3, -3}, {-3, -3}, {-3, -3}};
     int[] burnTick = {0, 0, 0, 0, 0};
     int[] healAmount = {0, 0, 0, 0, 0};
@@ -10,9 +9,7 @@ public class SkillSet {
     int[] damage = new int[5], requiredEnergy = new int[5];
     String[] skillName = new String[5];
 
-    public SkillSet() {
-        System.out.println("SKILLSET ENABLED");
-    }
+    public SkillSet() {}
 
     public void setBurnTick(int skillNum, int b) {
         this.burnTick[skillNum] = b;
@@ -32,14 +29,6 @@ public class SkillSet {
 
     public void setAirMoveAfterSkill(int skillNum, char moveToward) {
         this.airMoveAfterSkill[skillNum] = moveToward;
-    }
-
-    public int getDamage(int skillNum) {
-        return this.damage[skillNum];
-    }
-
-    public int getRequiredEnergy(int skillNum) {
-        return this.requiredEnergy[skillNum];
     }
 
     public void setSkillName(int skillNum, String name) {
