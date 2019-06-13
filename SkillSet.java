@@ -9,7 +9,6 @@ public class SkillSet {
     boolean[][] range = new boolean[5][9];
     int[] damage = new int[5], requiredEnergy = new int[5];
     String[] skillName = new String[5];
-    boolean isGuardOn = false;
 
     public SkillSet() {
         System.out.println("SKILLSET ENABLED");

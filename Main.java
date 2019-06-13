@@ -45,7 +45,7 @@ public class Main {
         }
     }
 
-    public static void attack(boolean isP1, char cmd, GUI_Menu gui, GameBoard g) throws InterruptedException {
+    public static void attackPhase(boolean isP1, char cmd, GUI_Menu gui, GameBoard g) throws InterruptedException {
         Player p = (isP1) ? p1 : p2;
         switch (cmd) {
             case '1':
@@ -54,7 +54,7 @@ public class Main {
             case '4':
             case '5':
                 ArrayList<Integer> range = p.getRangeByIntArray(p, p.skills, Integer.parseInt(Character.toString(cmd)) - 1, g);
-                gui.blinkBoard(convertIntegers(range), true);
+                gui.blinkBoard(convertIntegers(range), isP1);
                 p.attack(p.skills, Integer.parseInt(Character.toString(cmd)) - 1, g, gui);
                 gui.refreshBars();
                 Thread.sleep(500);
@@ -67,6 +67,11 @@ public class Main {
             default:
                 p.move(g, cmd);
                 Thread.sleep(500);
+        }
+        if (p.equals(p1) ? p2.isDead() : p1.isDead()) {
+            setWinner(p);
+            gui.showWinner(p.equals(p1) ? 1 : 2);
+            System.exit(0);
         }
         gui.refreshGuiBoard();
         gui.refreshBars();
@@ -120,35 +125,16 @@ public class Main {
 
             if (turnP1) {
                 for (int i = 0; i < 3; i++) {
-                    attack(true, cmdP1[i], gui, g);
-                    if (p2.isDead()) {
-                        setWinner(p1);
-                        gui.showWinner(winner);
-                        System.exit(0);
-                    }
-                    attack(false, cmdP2[i], gui, g);
-                    if (p1.isDead()) {
-                        setWinner(p2);
-                        gui.showWinner(winner);
-                        System.exit(0);
-                    }
+                    attackPhase(true, cmdP1[i], gui, g);
+                    attackPhase(false, cmdP2[i], gui, g);
                 }
             } else {
                 for (int i = 0; i < 3; i++) {
-                    attack(false, cmdP2[i], gui, g);
-                    if (p1.isDead()) {
-                        setWinner(p2);
-                        gui.showWinner(winner);
-                        System.exit(0);
-                    }
-                    attack(true, cmdP1[i], gui, g);
-                    if (p2.isDead()) {
-                        setWinner(p1);
-                        gui.showWinner(winner);
-                        System.exit(0);
-                    }
+                    attackPhase(false, cmdP2[i], gui, g);
+                    attackPhase(true, cmdP1[i], gui, g);
                 }
             }
+
             if (p1.takeBurnDamageAndReturnTickBefore() > 1) {
                 gui.logAppend(String.format("\n%s은(는) 화염 데미지를 입었습니다. (남은 턴 : %d)\n", p1.name, p1.getBurnTick()));
                 if (p1.isDead()) setWinner(p2);
@@ -165,9 +151,8 @@ public class Main {
             p2.setEnergy(p2.getEnergy() + 20 > 100 ? 100 : p2.getEnergy() + 20);
 
             //Guard off when turn ends
-            p1.skills.isGuardOn = false;
-            p2.skills.isGuardOn = false;
-
+            p1.isGuardOn = false;
+            p2.isGuardOn = false;
             gui.isP1Confirmed = false;
             gui.isP2Confirmed = false;
             g.earthBoardRefresh();

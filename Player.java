@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 public abstract class Player implements Attackable {
     private int health, energy, burnTick;
-    public boolean isP1;
+    public boolean isP1, isGuardOn;
     public String name;
     SkillSet skills;
-
 
     public Player() {
         this.health = 100;
@@ -48,7 +47,7 @@ public abstract class Player implements Attackable {
 
         // IF GUARD : GUARD ON
         if (skillNum == 4) {
-            p.skills.isGuardOn = true;
+            p.isGuardOn = true;
             gui.logAppend(String.format("\n%s는 가드를 올렸습니다.\n이번 턴의 다음 공격에 피해를 덜 받습니다.\n", p.name));
             System.out.printf("%s GUARD ON\n", p.name);
         }
@@ -76,11 +75,11 @@ public abstract class Player implements Attackable {
                 // RANGE CHECK
                 if (skillRange[0] >= 0 && skillRange[0] < 3 && skillRange[1] >= 0 && skillRange[1] < 4) {
                     // PLAYER CHECK
-                    if (g.gameboard[skillRange[0]][skillRange[1]][isP1 ? 1 : 0]) {
+                    if (g.gameBoard[skillRange[0]][skillRange[1]][isP1 ? 1 : 0]) {
                         // DAMAGE
-                        if (target.skills.isGuardOn) {
+                        if (target.isGuardOn) {
                             target.setHealth(target.getHealth() - p.skills.damage[skillNum] + 15);
-                            target.skills.isGuardOn = false;
+                            target.isGuardOn = false;
                             System.out.printf("DAMAGED %d! BUT GUARD WAS ON ! DAMAGED %d\n", p.skills.damage[skillNum], p.skills.damage[skillNum] - 15);
                             gui.logAppend(String.format("\n%s는 %s에게 %s를(을) 적중시켰습니다 !\n%d (-15)의 피해를 입혔습니다.\n", p.name, target.name, p.skills.skillName[skillNum], p.skills.damage[skillNum]));
                             gui.logAppend(String.format("\n%s의 가드가 깨졌습니다.\n", target.name));
@@ -93,7 +92,7 @@ public abstract class Player implements Attackable {
                         target.health = (target.health < 0) ? 0 : target.health;
 
                         // BURNTICK
-                        target.setBurnTick(p.skills.burnTick[skillNum]);
+                        if (p.skills.burnTick[skillNum] > 0) target.setBurnTick(p.skills.burnTick[skillNum]);
                     }
                 }
             }
@@ -109,7 +108,7 @@ public abstract class Player implements Attackable {
             int ty = playerPos[0] - p.skills.earthCCRange[skillNum][0];
             int tx = playerPos[1] + p.skills.earthCCRange[skillNum][1];
             if (ty < 3 && ty >= 0 && tx < 4 && tx >= 0) {
-                g.gameboard[ty][tx][2] = true;
+                g.gameBoard[ty][tx][2] = true;
                 g.earthCCBoard[ty][tx] = 3;
             }
         }
@@ -160,7 +159,7 @@ public abstract class Player implements Attackable {
         }
         int ty = pos[0] + dy[idx];
         int tx = pos[1] + dx[idx];
-        if (ty >= 0 && ty < 3 && tx >= 0 && tx < 4 && !g.gameboard[ty][tx][2]) {
+        if (ty >= 0 && ty < 3 && tx >= 0 && tx < 4 && !g.gameBoard[ty][tx][2]) {
             g.setPlayerPos(this.isP1, ty, tx);
 
         }
