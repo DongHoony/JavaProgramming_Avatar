@@ -24,6 +24,7 @@ public class GiAso extends Air {
         skills.setDamage(0, 20);
         skills.setRequiredEnergy(0, 30);
         skills.setRange(0, 0,2,3,4,6);
+        skills.setAirMoveAfterSkill(0, 'U');
         skills.setSkillName(0, "날갯짓");
 
     }

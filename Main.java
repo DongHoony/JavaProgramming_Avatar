@@ -3,6 +3,7 @@ package Avatar;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
 
@@ -79,14 +80,20 @@ public class Main {
     static Player[] t = {p2, p1};
 
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
-
+        Music m = new Music();
+        m.setMusicNum(0);
+        m.start();
         GUI_Menu gui = new GUI_Menu();
         gui.setBtnsDisable();
+
+
+
 
         //CHARACTER SELECT : USE IF TO GET P1, P2 CHARACTERS
         while (!GUI_Menu.isGameStarted) {
             Thread.sleep(100);
         }
+        m.stop();
 
         int p1Char = GUI_Menu.p1Char;
         int p2Char = GUI_Menu.p2Char;
@@ -100,6 +107,10 @@ public class Main {
         int winner = -1;
         boolean turnP1 = false;
 
+
+
+        Random r = new Random();
+        m.play(r.nextInt(5) + 1);
         //game cycle
         while (true) {
             gui.refreshGuiBoard();

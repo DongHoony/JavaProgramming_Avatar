@@ -547,7 +547,7 @@
                   <caretColor color="-7299453"/>
                   <disabledTextColor color="-14872901"/>
                   <editable value="false"/>
-                  <enabled value="false"/>
+                  <enabled value="true"/>
                   <focusCycleRoot value="false"/>
                   <focusable value="false"/>
                   <font name="210 MGothic 060" size="16"/>
