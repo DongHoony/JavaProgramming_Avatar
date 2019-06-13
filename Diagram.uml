@@ -3,106 +3,106 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="785.0" y="564.0">Avatar.Aang</node>
-    <node x="942.0" y="564.0">Avatar.Toff</node>
-    <node x="1099.0" y="564.0">Avatar.Earthian</node>
-    <node x="105.39285714285711" y="487.0">Avatar.Water</node>
-    <node x="157.0" y="564.0">Avatar.Pakku</node>
-    <node x="628.0" y="564.0">Avatar.GiAso</node>
+    <node x="469.0" y="564.0">Avatar.Aang</node>
+    <node x="161.0" y="564.0">Avatar.Toff</node>
+    <node x="0.0" y="564.0">Avatar.Earthian</node>
+    <node x="1035.107142857143" y="487.0">Avatar.Water</node>
+    <node x="931.0" y="564.0">Avatar.Pakku</node>
+    <node x="315.0" y="564.0">Avatar.GiAso</node>
     <node x="0.0" y="813.0">Avatar.SkillSet</node>
-    <node x="741.3928571428571" y="487.0">Avatar.Air</node>
-    <node x="314.0" y="564.0">Avatar.Zuko</node>
-    <node x="280.0" y="813.0">Avatar.GameBoard</node>
-    <node x="468.5" y="0.0">Avatar.Attackable</node>
-    <node x="0.0" y="564.0">Avatar.Katara</node>
-    <node x="1049.142857142857" y="487.0">Avatar.Earth</node>
-    <node x="399.5" y="99.0">Avatar.Player</node>
-    <node x="423.3928571428571" y="487.0">Avatar.Fire</node>
-    <node x="471.0" y="564.0">Avatar.Ozai</node>
-    <node x="558.0" y="813.0">Avatar.Main</node>
+    <node x="427.1071428571429" y="487.0">Avatar.Air</node>
+    <node x="623.0" y="564.0">Avatar.Zuko</node>
+    <node x="277.0" y="813.0">Avatar.GameBoard</node>
+    <node x="461.5" y="0.0">Avatar.Attackable</node>
+    <node x="1085.0" y="564.0">Avatar.Katara</node>
+    <node x="109.35714285714289" y="487.0">Avatar.Earth</node>
+    <node x="391.0" y="99.0">Avatar.Player</node>
+    <node x="731.1071428571429" y="487.0">Avatar.Fire</node>
+    <node x="777.0" y="564.0">Avatar.Ozai</node>
+    <node x="552.0" y="813.0">Avatar.Main</node>
   </nodes>
   <notes />
   <edges>
     <edge source="Avatar.GiAso" target="Avatar.Air">
       <point x="0.0" y="-102.0" />
-      <point x="696.5" y="539.0" />
-      <point x="758.1428571428571" y="539.0" />
-      <point x="-16.75" y="13.5" />
+      <point x="382.0" y="539.0" />
+      <point x="443.1071428571429" y="539.0" />
+      <point x="-16.0" y="13.5" />
     </edge>
     <edge source="Avatar.Fire" target="Avatar.Player">
       <point x="0.0" y="-13.5" />
-      <point x="460.8928571428571" y="462.0" />
-      <point x="564.125" y="462.0" />
-      <point x="-54.875" y="169.0" />
+      <point x="767.1071428571429" y="462.0" />
+      <point x="667.25" y="462.0" />
+      <point x="55.25" y="169.0" />
     </edge>
     <edge source="Avatar.Water" target="Avatar.Player">
       <point x="0.0" y="-13.5" />
-      <point x="146.8928571428571" y="462.0" />
-      <point x="454.375" y="462.0" />
-      <point x="-164.625" y="169.0" />
+      <point x="1075.107142857143" y="462.0" />
+      <point x="777.75" y="462.0" />
+      <point x="165.75" y="169.0" />
     </edge>
     <edge source="Avatar.Katara" target="Avatar.Water">
       <point x="0.0" y="-102.0" />
-      <point x="68.5" y="539.0" />
-      <point x="126.14285714285711" y="539.0" />
-      <point x="-20.75" y="13.5" />
+      <point x="1152.0" y="539.0" />
+      <point x="1095.107142857143" y="539.0" />
+      <point x="20.0" y="13.5" />
     </edge>
     <edge source="Avatar.Aang" target="Avatar.Air">
       <point x="0.0" y="-102.0" />
-      <point x="853.5" y="539.0" />
-      <point x="791.6428571428571" y="539.0" />
-      <point x="16.75" y="13.5" />
+      <point x="536.0" y="539.0" />
+      <point x="475.1071428571429" y="539.0" />
+      <point x="16.0" y="13.5" />
     </edge>
     <edge source="Avatar.Pakku" target="Avatar.Water">
       <point x="0.0" y="-102.0" />
-      <point x="225.5" y="539.0" />
-      <point x="167.6428571428571" y="539.0" />
-      <point x="20.75" y="13.5" />
+      <point x="998.0" y="539.0" />
+      <point x="1055.107142857143" y="539.0" />
+      <point x="-20.0" y="13.5" />
     </edge>
     <edge source="Avatar.Earthian" target="Avatar.Earth">
       <point x="0.0" y="-102.0" />
-      <point x="1171.0" y="539.0" />
-      <point x="1111.392857142857" y="539.0" />
-      <point x="20.75" y="13.5" />
+      <point x="70.5" y="539.0" />
+      <point x="129.3571428571429" y="539.0" />
+      <point x="-20.0" y="13.5" />
     </edge>
     <edge source="Avatar.Ozai" target="Avatar.Fire">
       <point x="0.0" y="-102.0" />
-      <point x="539.5" y="539.0" />
-      <point x="479.6428571428571" y="539.0" />
-      <point x="18.75" y="13.5" />
+      <point x="844.0" y="539.0" />
+      <point x="785.1071428571429" y="539.0" />
+      <point x="18.0" y="13.5" />
     </edge>
     <edge source="Avatar.Toff" target="Avatar.Earth">
       <point x="0.0" y="-102.0" />
-      <point x="1010.5" y="539.0" />
-      <point x="1069.892857142857" y="539.0" />
-      <point x="-20.75" y="13.5" />
+      <point x="228.0" y="539.0" />
+      <point x="169.3571428571429" y="539.0" />
+      <point x="20.0" y="13.5" />
     </edge>
     <edge source="Avatar.Zuko" target="Avatar.Fire">
       <point x="0.0" y="-102.0" />
-      <point x="382.5" y="539.0" />
-      <point x="442.1428571428571" y="539.0" />
-      <point x="-18.75" y="13.5" />
+      <point x="690.0" y="539.0" />
+      <point x="749.1071428571429" y="539.0" />
+      <point x="-18.0" y="13.5" />
     </edge>
     <edge source="Avatar.Air" target="Avatar.Player">
       <point x="0.0" y="-13.5" />
-      <point x="774.8928571428571" y="462.0" />
-      <point x="673.875" y="462.0" />
-      <point x="54.875" y="169.0" />
+      <point x="459.1071428571429" y="462.0" />
+      <point x="556.75" y="462.0" />
+      <point x="-55.25" y="169.0" />
     </edge>
     <edge source="Avatar.Earth" target="Avatar.Player">
       <point x="0.0" y="-13.5" />
-      <point x="1090.642857142857" y="462.0" />
-      <point x="783.625" y="462.0" />
-      <point x="164.625" y="169.0" />
+      <point x="149.3571428571429" y="462.0" />
+      <point x="446.25" y="462.0" />
+      <point x="-165.75" y="169.0" />
     </edge>
     <edge source="Avatar.Player" target="Avatar.Attackable">
       <point x="0.0" y="-169.0" />
       <point x="0.0" y="24.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.8230769230769235" x="939.0" y="926.5514018691588" />
+  <settings layout="Hierarchic Group" zoom="0.8230769230769235" x="834.7196261682238" y="841.7289719626166" />
   <SelectedNodes>
-    <node>Avatar.Ozai</node>
+    <node>Avatar.Main</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>

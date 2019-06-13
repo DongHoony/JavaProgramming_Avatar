@@ -15,7 +15,6 @@ public class Main {
     }
 
     public static void makeCharacter(int isP1, int c) {
-
         switch (c) {
             case 1:
                 t[isP1] = new Aang((isP1 == 1) ? true : false);
@@ -41,18 +40,13 @@ public class Main {
             case 8:
                 t[isP1] = new Ozai((isP1 == 1) ? true : false);
                 break;
-
         }
     }
 
     public static void attackPhase(boolean isP1, char cmd, GUI_Menu gui, GameBoard g) throws InterruptedException {
         Player p = (isP1) ? p1 : p2;
         switch (cmd) {
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
+            case '1': case '2': case '3': case '4': case '5':
                 ArrayList<Integer> range = p.getRangeByIntArray(p, p.skills, Integer.parseInt(Character.toString(cmd)) - 1, g);
                 gui.blinkBoard(convertIntegers(range), isP1);
                 p.attack(p.skills, Integer.parseInt(Character.toString(cmd)) - 1, g, gui);
@@ -102,7 +96,7 @@ public class Main {
         p1 = t[1];
         p2 = t[0];
         gui.setBtnsActive();
-        GameBoard g = new GameBoard(p1, p2);
+        GameBoard g = new GameBoard();
         int winner = -1;
         boolean turnP1 = false;
 

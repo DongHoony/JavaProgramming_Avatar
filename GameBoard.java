@@ -2,10 +2,8 @@ package Avatar;
 public class GameBoard {
     static boolean[][][] gameBoard;
     static int[][] earthCCBoard;
-    Player p1, p2;
-    public GameBoard(Player p1, Player p2) {
-        this.p1 = p1;
-        this.p2 = p2;
+
+    public GameBoard() {
         // 3th dimension : P1, P2, ROCK
         gameBoard = new boolean[3][4][3];
         earthCCBoard = new int[3][4];

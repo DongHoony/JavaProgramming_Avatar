@@ -98,7 +98,7 @@ public abstract class Player implements Attackable {
         if (p.skills.airMoveAfterSkill[skillNum] != 0) {
             p.move(g, p.skills.airMoveAfterSkill[skillNum]);
         }
-        //Earth cc
+        //Earth CC Active
         if (p.skills.earthCCRange[skillNum][0] != -3) {
             gui.logAppend(String.format("\n%s가 땅을 들어올렸습니다 !\n", p.name));
             int ty = playerPos[0] - p.skills.earthCCRange[skillNum][0];
@@ -123,7 +123,6 @@ public abstract class Player implements Attackable {
         return (this.health <= 0) ? true : false;
     }
 
-    //getter, setter
     public int getBurnTick() {
         return burnTick;
     }
