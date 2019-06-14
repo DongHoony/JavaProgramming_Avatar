@@ -21,7 +21,8 @@ public class Music implements Runnable{
     }
     public void play(int num) {
         new JFXPanel();
-        player = new MediaPlayer(new Media(new File(paths[num]).toURI().toString()));
+        File f = new File("img/"+paths[num]);
+        player = new MediaPlayer(new Media(f.toURI().toString()));
         player.setVolume(0.08);
         player.play();
 
