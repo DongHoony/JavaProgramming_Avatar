@@ -663,8 +663,9 @@
             <properties>
               <background color="-2827770"/>
               <enabled value="true"/>
+              <font name="210 MGothicOTF 060"/>
               <foreground color="-16777216"/>
-              <text value="GAME START"/>
+              <text value="전투 시작"/>
             </properties>
           </component>
           <component id="1f8fd" class="javax.swing.JProgressBar" binding="p1HealthBar">

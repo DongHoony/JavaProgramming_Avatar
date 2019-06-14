@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -130,9 +132,15 @@ public class GUI_Menu extends JFrame {
     public GUI_Menu() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException, InterruptedException {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
-
-
-
+        String[] selCharMsg = {"공기의 유목민, 아바타 아앙!\n아앙 : 자연은 멈출 때를 알지.",
+                                "공기의 유목민, 최강의 에어 번더 기아소!\n기아소 : 과거보다 한 발 앞서 나간다.",
+                                "흙의 왕국, 베이 퐁 가문의 토프!\n토프 : 마법의 베틀로, 바위를 엮어내리라.",
+                                "흙의 왕국, 최강의 어스 벤더 부미!\n부미 : 모든 걸 땅에서 일궈내야 하는 법.",
+                                "남극의 물의 부족, 수호자 카타라!\n카타라 : 생명의 순환은 여기까지다.",
+                                "북극의 물의 부족, 최강의 워터 벤더 파쿠!\n파쿠 : 내가 곧 눈과 바람, 그리고 얼음이다.",
+                                "불의 제국, 왕자 주코! \n주코 : 바로 네 녀석이 이 땅의 재앙이다.",
+                                "불의 제국, 제왕 오자이! \n오자이 : 쓰디쓴 최후를 선사하마."};
+        this.setTitle("Avatar X Inuyasha");
         for (JPanel p : guiBoard) p.setLayout(null);
         setBarLabelValue(true, true, 100);
         setBarLabelValue(true, false, 100);
@@ -154,15 +162,16 @@ public class GUI_Menu extends JFrame {
                     logAppend("캐릭터를 골라 주세요.\n");
                     return;
                 }
+                logAppend("\n잠시 후 게임이 시작됩니다!\n");
                 gameStartBtn.setEnabled(false);
                 p1SelCharBox.setEnabled(false);
                 p2SelCharBox.setEnabled(false);
                 gameStartBtn.setVisible(false);
                 p1SelCharBox.setVisible(false);
                 p2SelCharBox.setVisible(false);
-                isGameStarted = true;
                 p1Char = p1SelCharBox.getSelectedIndex() + 1;
                 p2Char = p2SelCharBox.getSelectedIndex() + 1;
+                isGameStarted = true;
             }
         });
         for (JButton btn : p1Btn) btn.addActionListener(this::actionPerformed);
@@ -171,6 +180,27 @@ public class GUI_Menu extends JFrame {
         p2ResetBtn.addActionListener(this::actionPerformed);
         p1ConfirmBtn.addActionListener(this::actionPerformed);
         p2ConfirmBtn.addActionListener(this::actionPerformed);
+        p1SelCharBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.paramString().split(",")[2].charAt(12) == 'S'){
+                    guiLog.setText(String.format(
+                            "P1 : %s\n\nP2 : %s\n", (p1SelCharBox.getSelectedIndex() > -1) ? selCharMsg[p1SelCharBox.getSelectedIndex()] : "캐릭터를 선택해 주세요",
+                            (p2SelCharBox.getSelectedIndex() > -1) ? selCharMsg[p2SelCharBox.getSelectedIndex()] : "캐릭터를 선택해 주세요"));
+                }
+            }
+        });
+        p2SelCharBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.paramString().split(",")[2].charAt(12) == 'S'){
+                    guiLog.setText(String.format(
+                            "P1 : %s\n\nP2 : %s\n", (p1SelCharBox.getSelectedIndex() > -1) ? selCharMsg[p1SelCharBox.getSelectedIndex()] : "캐릭터를 선택해 주세요",
+                            (p2SelCharBox.getSelectedIndex() > -1) ? selCharMsg[p2SelCharBox.getSelectedIndex()] : "캐릭터를 선택해 주세요"));
+
+                }
+            }
+        });
     }
 
     public void resetQueue(boolean isP1) {

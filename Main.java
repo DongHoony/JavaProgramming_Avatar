@@ -86,13 +86,11 @@ public class Main {
         GUI_Menu gui = new GUI_Menu();
         gui.setBtnsDisable();
 
-
-
-
         //CHARACTER SELECT : USE IF TO GET P1, P2 CHARACTERS
         while (!GUI_Menu.isGameStarted) {
             Thread.sleep(100);
         }
+
         m.stop();
 
         int p1Char = GUI_Menu.p1Char;
@@ -104,10 +102,9 @@ public class Main {
         p2 = t[0];
         gui.setBtnsActive();
         GameBoard g = new GameBoard();
+        Thread.sleep(300);
         int winner = -1;
         boolean turnP1 = false;
-
-
 
         Random r = new Random();
         m.play(r.nextInt(4) + 1);
