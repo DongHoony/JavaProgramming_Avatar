@@ -8,7 +8,7 @@ public class Aang extends Air {
         this();
         this.isP1 = isP1;
         this.activeSkills();
-        this.name = "Aang";
+        this.name = "아앙";
     }
 
     public void activeSkills(){
@@ -52,7 +52,7 @@ public class Aang extends Air {
     }
     public void skill5(){
         skills.setDamage(4, 0);
-        skills.setSkillName(4, "Guard");
+        skills.setSkillName(4, "가드");
         skills.setRequiredEnergy(4, 15);
     }
 }

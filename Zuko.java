@@ -8,7 +8,7 @@ public class Zuko extends Fire {
         this();
         this.isP1 = isP1;
         this.activeSkills();
-        this.name = "Zuko";
+        this.name = "주코";
     }
     public void activeSkills(){
         this.skill1();
@@ -45,7 +45,7 @@ public class Zuko extends Fire {
     }
     public void skill5(){
         skills.setDamage(4, 0);
-        skills.setSkillName(4, "Guard");
+        skills.setSkillName(4, "가드");
         skills.setRequiredEnergy(4, 15);
     }
 }

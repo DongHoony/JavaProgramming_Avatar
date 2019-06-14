@@ -10,7 +10,7 @@ public class Earthian extends Earth {
         this();
         this.isP1 = isP1;
         this.activeSkills();
-        this.name = "Bumi";
+        this.name = "부미";
     }
 
     public void activeSkills() {
@@ -52,7 +52,7 @@ public class Earthian extends Earth {
 
     public void skill5() {
         skills.setDamage(4, 0);
-        skills.setSkillName(4, "Guard");
+        skills.setSkillName(4, "가드");
         skills.setRequiredEnergy(4, 15);
     }
 }

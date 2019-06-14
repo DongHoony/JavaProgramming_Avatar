@@ -8,7 +8,7 @@ public class Katara extends Water{
         this();
         this.isP1 = isP1;
         this.activeSkills();
-        this.name = "Katara";
+        this.name = "카타라";
     }
 
     public void activeSkills() {
@@ -45,7 +45,7 @@ public class Katara extends Water{
     }
     public void skill5(){
         skills.setDamage(4, 0);
-        skills.setSkillName(4, "Guard");
+        skills.setSkillName(4, "가드");
         skills.setRequiredEnergy(4, 15);
     }
 

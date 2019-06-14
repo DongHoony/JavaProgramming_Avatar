@@ -18,7 +18,7 @@ public class Pakku extends Water{
 		this();
 		this.isP1 = isP1;
 		this.activeSkills();
-		this.name = "Pakku";
+		this.name = "파쿠";
 	}
 	public void skill1() {
 		skills.setDamage(0, 0);
@@ -48,7 +48,7 @@ public class Pakku extends Water{
 	}
 	public void skill5(){
 		skills.setDamage(4, 0);
-		skills.setSkillName(4, "Guard");
+		skills.setSkillName(4, "가드");
 		skills.setRequiredEnergy(4, 15);
 	}
 
