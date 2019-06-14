@@ -52,16 +52,13 @@ public class Main {
                 gui.blinkBoard(convertIntegers(range), isP1);
                 p.attack(p.skills, Integer.parseInt(Character.toString(cmd)) - 1, g, gui);
                 gui.refreshBars();
-                Thread.sleep(500);
                 break;
             case 'E':
                 gui.logAppend(String.format("\n%s은(는) 기력을 회복합니다.\n", p.name));
-                Thread.sleep(1000);
                 p.setEnergy((p.getEnergy() + 30 > 100) ? 100 : p.getEnergy() + 30);
                 break;
             default:
                 p.move(g, cmd);
-                Thread.sleep(500);
         }
         if (p.equals(p1) ? p2.isDead() : p1.isDead()) {
             setWinner(p);
@@ -70,6 +67,7 @@ public class Main {
         }
         gui.refreshGuiBoard();
         gui.refreshBars();
+        Thread.sleep(700);
     }
 
     public static int setWinner(Player p) {
@@ -128,6 +126,7 @@ public class Main {
             if (turnP1) {
                 for (int i = 0; i < 3; i++) {
                     attackPhase(true, cmdP1[i], gui, g);
+
                     attackPhase(false, cmdP2[i], gui, g);
                 }
             } else {
