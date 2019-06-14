@@ -110,7 +110,7 @@ public class Main {
 
 
         Random r = new Random();
-        m.play(r.nextInt(5) + 1);
+        m.play(r.nextInt(4) + 1);
         //game cycle
         while (true) {
             gui.refreshGuiBoard();
